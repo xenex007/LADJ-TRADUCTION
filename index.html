@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bureau de Traduction Officielle Maître Ladj.A | Dar El Beïda, Alger</title>
-    <meta name="description" content="Bureau de traduction assermentée et légalisation de documents à Dar El Beïda, Alger. Traduction Arabe, Français, Anglais. Maître Ladj.A, traducteur agréé.">
-    <meta name="keywords" content="traduction assermentée Alger, traducteur agréé Dar El Beïda, légalisation documents, traduction arabe français anglais, Maître Ladj.A">
+    <title>Bureau de Traduction Officielle Maître Ladj.A | Traductrice Assermentée - Dar El Beïda, Alger</title>
+    <meta name="description" content="Traductrice officielle assermentée agréée par le Ministère de la Justice. Traduction certifiée Arabe, Français, Anglais. Rattachée à la Cour d'Alger. Dar El Beïda.">
+    <meta name="keywords" content="traductrice assermentée Alger, traduction officielle Dar El Beïda, traductrice agréée Cour d'Alger, traduction arabe français anglais, Maître Ladj.A">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,6 +22,8 @@
                             900: '#020617',
                         },
                         accent: {
+                            100: '#fef3c7',
+                            200: '#fde68a',
                             400: '#fbbf24',
                             500: '#f59e0b',
                             600: '#d97706',
@@ -38,55 +39,32 @@
         }
     </script>
     
-    <!-- Fonts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/inter@latest/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/noto-sans-arabic@latest/index.css">
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        html[dir="rtl"] body {
-            font-family: 'Noto Sans Arabic', sans-serif;
-        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        html[dir="rtl"] body { font-family: 'Noto Sans Arabic', sans-serif; }
         
-        /* Animations */
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+        .fade-in { opacity: 0; transition: opacity 1s ease-out; }
+        .fade-in.visible { opacity: 1; }
         
-        .fade-in {
-            opacity: 0;
-            transition: opacity 1s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-        }
-        
-        /* Carousel */
         .carousel-slide {
             position: absolute;
             inset: 0;
             opacity: 0;
-            transition: opacity 1s ease-in-out;
+            transition: opacity 1.2s ease-in-out;
         }
-        .carousel-slide.active {
-            opacity: 1;
-        }
+        .carousel-slide.active { opacity: 1; }
         
-        /* WhatsApp Pulse */
         @keyframes pulse-ring {
             0% { transform: scale(0.8); opacity: 1; }
             100% { transform: scale(2); opacity: 0; }
@@ -101,27 +79,13 @@
             z-index: -1;
         }
         
-        /* RTL Adjustments */
-        html[dir="rtl"] .rtl-flip {
-            transform: scaleX(-1);
-        }
+        html[dir="rtl"] .rtl-flip { transform: scaleX(-1); }
         
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #0f172a;
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #1e293b;
-        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #0f172a; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #1e293b; }
         
-        /* Honeypot */
         .gotcha {
             position: absolute;
             left: -9999px;
@@ -129,15 +93,21 @@
             height: 0;
             width: 0;
         }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
     </style>
 </head>
 <body class="bg-white text-slate-800 antialiased overflow-x-hidden">
 
-    <!-- Header / Navigation -->
+    <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
                 <a href="#accueil" class="flex items-center gap-3 group">
                     <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
                         <i data-lucide="languages" class="w-6 h-6 text-white"></i>
@@ -148,16 +118,16 @@
                     </div>
                 </a>
                 
-                <!-- Desktop Navigation -->
                 <nav class="hidden lg:flex items-center gap-8">
                     <a href="#accueil" class="text-sm font-medium text-slate-700 hover:text-accent-600 transition-colors" data-i18n="navHome">Accueil</a>
                     <a href="#apropos" class="text-sm font-medium text-slate-700 hover:text-accent-600 transition-colors" data-i18n="navAbout">À Propos</a>
                     <a href="#services" class="text-sm font-medium text-slate-700 hover:text-accent-600 transition-colors" data-i18n="navServices">Services</a>
                     <a href="#documents" class="text-sm font-medium text-slate-700 hover:text-accent-600 transition-colors" data-i18n="navDocuments">Documents</a>
+                    <a href="#international" class="text-sm font-medium text-slate-700 hover:text-accent-600 transition-colors" data-i18n="navInternational">International</a>
+                    <a href="#entreprises" class="text-sm font-medium text-slate-700 hover:text-accent-600 transition-colors" data-i18n="navBusiness">Entreprises</a>
                     <a href="#contact" class="text-sm font-medium text-slate-700 hover:text-accent-600 transition-colors" data-i18n="navContact">Contact</a>
                 </nav>
                 
-                <!-- Language Switcher & Mobile Menu -->
                 <div class="flex items-center gap-4">
                     <div class="flex items-center bg-slate-100 rounded-full p-1">
                         <button onclick="setLanguage('fr')" class="lang-btn px-3 py-1 text-xs font-semibold rounded-full transition-all bg-white text-primary-500 shadow-sm" data-lang="fr">FR</button>
@@ -172,13 +142,14 @@
             </div>
         </div>
         
-        <!-- Mobile Menu -->
         <div id="mobileMenu" class="lg:hidden hidden bg-white border-t border-slate-200 absolute w-full">
             <div class="px-4 py-4 space-y-3">
                 <a href="#accueil" class="block text-sm font-medium text-slate-700 hover:text-accent-600 py-2" data-i18n="navHome">Accueil</a>
                 <a href="#apropos" class="block text-sm font-medium text-slate-700 hover:text-accent-600 py-2" data-i18n="navAbout">À Propos</a>
                 <a href="#services" class="block text-sm font-medium text-slate-700 hover:text-accent-600 py-2" data-i18n="navServices">Services</a>
                 <a href="#documents" class="block text-sm font-medium text-slate-700 hover:text-accent-600 py-2" data-i18n="navDocuments">Documents</a>
+                <a href="#international" class="block text-sm font-medium text-slate-700 hover:text-accent-600 py-2" data-i18n="navInternational">International</a>
+                <a href="#entreprises" class="block text-sm font-medium text-slate-700 hover:text-accent-600 py-2" data-i18n="navBusiness">Entreprises</a>
                 <a href="#contact" class="block text-sm font-medium text-slate-700 hover:text-accent-600 py-2" data-i18n="navContact">Contact</a>
             </div>
         </div>
@@ -186,36 +157,34 @@
 
     <!-- Hero Section -->
     <section id="accueil" class="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden">
-        <!-- Carousel Backgrounds -->
         <div class="absolute inset-0">
             <div class="carousel-slide active">
-                <img src="https://image.qwenlm.ai/public_source/52b02057-f608-4b86-8820-22c89bf41c2e/17f9edd42-8496-4280-8d5c-89e9920faa10.png" alt="Bureau de traduction officiel" class="w-full h-full object-cover">
+                <img src="https://image.qwenlm.ai/public_source/52b02057-f608-4b86-8820-22c89bf41c2e/1fbcc6598-7117-4d3d-a10d-47cd58548265.png" alt="Bureau de traduction officiel Maître Ladj.A" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-900/70 to-primary-900/40"></div>
             </div>
             <div class="carousel-slide">
-                <img src="https://image.qwenlm.ai/public_source/52b02057-f608-4b86-8820-22c89bf41c2e/1919fced8-109c-455d-9e62-9b79a13c1596.png" alt="Documents certifiés" class="w-full h-full object-cover">
+                <img src="https://image.qwenlm.ai/public_source/52b02057-f608-4b86-8820-22c89bf41c2e/1be11bdf3-b589-41e8-a0c7-3fa5eee75908.png" alt="Documents certifiés avec sceau officiel" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-900/70 to-primary-900/40"></div>
             </div>
             <div class="carousel-slide">
-                <img src="https://image.qwenlm.ai/public_source/52b02057-f608-4b86-8820-22c89bf41c2e/18ecfc3a3-0aa7-47b1-8f75-50288ba0f5a9.png" alt="Cabinet juridique Alger" class="w-full h-full object-cover">
+                <img src="https://image.qwenlm.ai/public_source/52b02057-f608-4b86-8820-22c89bf41c2e/11908850f-2e4a-41b8-a991-62051f45aac0.png" alt="Documents confidentiels et passeports" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-900/70 to-primary-900/40"></div>
             </div>
         </div>
         
-        <!-- Content -->
         <div class="relative h-full flex items-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="max-w-3xl fade-in-up">
                     <div class="inline-flex items-center gap-2 bg-accent-600/20 border border-accent-500/30 rounded-full px-4 py-1.5 mb-6">
                         <div class="w-2 h-2 bg-accent-400 rounded-full animate-pulse"></div>
-                        <span class="text-xs font-semibold text-accent-400 uppercase tracking-wider" data-i18n="heroBadge">Traducteur Assermenté Agréé</span>
+                        <span class="text-xs font-semibold text-accent-400 uppercase tracking-wider" data-i18n="heroBadge">Traductrice Officielle Assermentée</span>
                     </div>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                        <span data-i18n="heroTitle1">Bureau de Traduction</span><br>
-                        <span class="text-accent-400" data-i18n="heroTitle2">Officielle Maître Ladj.A</span>
+                        <span data-i18n="heroTitle1">Bureau de Traduction Officielle</span><br>
+                        <span class="gradient-text" data-i18n="heroTitle2">Maître Ladj.A</span>
                     </h1>
                     <p class="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed max-w-2xl" data-i18n="heroDesc">
-                        Votre partenaire de confiance pour la traduction assermentée et la légalisation de documents à Dar El Beïda, Alger. Précision, confidentialité et rapidité garanties.
+                        Agréée par le Ministère de la Justice, rattachée à la Cour d'Alger. Traduction certifiée et sceau officiel d'auxiliaire de justice pour une validité juridique absolue.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-accent-600 hover:bg-accent-700 text-white font-semibold px-8 py-4 rounded-lg transition-all shadow-lg shadow-accent-600/30 hover:shadow-accent-600/50">
@@ -231,9 +200,8 @@
             </div>
         </div>
         
-        <!-- Carousel Indicators -->
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-            <button class="carousel-dot w-12 h-1 bg-white/40 rounded-full transition-all active:bg-accent-400" data-slide="0"></button>
+            <button class="carousel-dot w-12 h-1 bg-white/40 rounded-full transition-all" data-slide="0"></button>
             <button class="carousel-dot w-12 h-1 bg-white/40 rounded-full transition-all" data-slide="1"></button>
             <button class="carousel-dot w-12 h-1 bg-white/40 rounded-full transition-all" data-slide="2"></button>
         </div>
@@ -273,16 +241,19 @@
                         <span data-i18n="aboutBadge">À Propos</span>
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-bold text-primary-500 mb-6 leading-tight" data-i18n="aboutTitle">
-                        L'excellence au service de vos traductions officielles
+                        L'excellence au service de la traduction officielle
                     </h2>
-                    <p class="text-slate-600 mb-6 leading-relaxed" data-i18n="aboutDesc1">
-                        Le Bureau de Traduction Officielle Maître Ladj.A est un cabinet agréé situé à Dar El Beïda, Alger. Nous sommes spécialisés dans la traduction assermentée et la légalisation de documents pour les particuliers, les entreprises et les institutions.
+                    <p class="text-slate-600 mb-4 leading-relaxed" data-i18n="aboutDesc1">
+                        Le Bureau de Traduction Officielle Maître Ladj.A est un cabinet agréé situé à Dar El Beïda, Alger. Rattaché à la circonscription judiciaire du tribunal de Dar El Beïda, Cour d'Alger, le bureau prend en charge les demandes des particuliers, des entreprises et des institutions à travers tout le territoire national.
                     </p>
-                    <p class="text-slate-600 mb-8 leading-relaxed" data-i18n="aboutDesc2">
-                        Notre engagement : une précision terminologique rigoureuse, le respect strict des délais et une confidentialité absolue de vos documents sensibles.
+                    <p class="text-slate-600 mb-4 leading-relaxed" data-i18n="aboutDesc2">
+                        Chaque traduction délivrée est directement revêtue du sceau officiel d'auxiliaire de justice agréé par le Ministère de la Justice, garantissant ainsi sa validité juridique absolue auprès des administrations, des instances judiciaires et des représentations diplomatiques.
+                    </p>
+                    <p class="text-slate-600 mb-8 leading-relaxed" data-i18n="aboutDesc3">
+                        L'engagement du cabinet repose sur une précision terminologique rigoureuse, le respect strict des délais et une confidentialité absolue des documents confiés.
                     </p>
                     
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="flex items-start gap-3">
                             <div class="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                 <i data-lucide="shield-check" class="w-5 h-5 text-accent-600"></i>
@@ -294,11 +265,20 @@
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="map" class="w-5 h-5 text-accent-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-500 text-sm" data-i18n="value2Title">Compétence Élargie</h4>
+                                <p class="text-xs text-slate-500 mt-1" data-i18n="value2Desc">Basé à Dar El Beïda (Cour d'Alger), habilité national</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                 <i data-lucide="clock" class="w-5 h-5 text-accent-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-primary-500 text-sm" data-i18n="value2Title">Rapidité</h4>
-                                <p class="text-xs text-slate-500 mt-1" data-i18n="value2Desc">Traitement express disponible</p>
+                                <h4 class="font-semibold text-primary-500 text-sm" data-i18n="value3Title">Rapidité</h4>
+                                <p class="text-xs text-slate-500 mt-1" data-i18n="value3Desc">Traitement express disponible</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
@@ -306,17 +286,17 @@
                                 <i data-lucide="lock" class="w-5 h-5 text-accent-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-primary-500 text-sm" data-i18n="value3Title">Confidentialité</h4>
-                                <p class="text-xs text-slate-500 mt-1" data-i18n="value3Desc">Protection absolue des données</p>
+                                <h4 class="font-semibold text-primary-500 text-sm" data-i18n="value4Title">Confidentialité</h4>
+                                <p class="text-xs text-slate-500 mt-1" data-i18n="value4Desc">Protection absolue des données</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-3">
+                        <div class="flex items-start gap-3 sm:col-span-2">
                             <div class="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                 <i data-lucide="award" class="w-5 h-5 text-accent-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-primary-500 text-sm" data-i18n="value4Title">Qualité</h4>
-                                <p class="text-xs text-slate-500 mt-1" data-i18n="value4Desc">Terminologie juridique précise</p>
+                                <h4 class="font-semibold text-primary-500 text-sm" data-i18n="value5Title">Qualité & Expertise</h4>
+                                <p class="text-xs text-slate-500 mt-1" data-i18n="value5Desc">15+ ans d'expérience en terminologie juridique, commerciale et technique</p>
                             </div>
                         </div>
                     </div>
@@ -324,7 +304,7 @@
                 
                 <div class="relative fade-in-up" style="transition-delay: 200ms;">
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="https://image.qwenlm.ai/public_source/52b02057-f608-4b86-8820-22c89bf41c2e/1919fced8-109c-455d-9e62-9b79a13c1596.png" alt="Traduction officielle" class="w-full h-[500px] object-cover">
+                        <img src="https://image.qwenlm.ai/public_source/52b02057-f608-4b86-8820-22c89bf41c2e/1be11bdf3-b589-41e8-a0c7-3fa5eee75908.png" alt="Documents certifiés avec sceau officiel" class="w-full h-[500px] object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary-900/60 to-transparent"></div>
                     </div>
                     <div class="absolute -bottom-6 -right-6 bg-accent-600 text-white p-6 rounded-2xl shadow-xl hidden sm:block">
@@ -346,55 +326,41 @@
                     <div class="w-8 h-px bg-accent-600"></div>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-bold text-primary-500 mb-4" data-i18n="servicesTitle">
-                    Services de traduction professionnelle
+                    Services de Traduction Officielle
                 </h2>
                 <p class="text-slate-600" data-i18n="servicesDesc">
-                    Nous offrons une gamme complète de services de traduction assermentée pour répondre à tous vos besoins administratifs, juridiques et commerciaux.
+                    Une gamme de prestations rigoureuses pour répondre aux exigences administratives, juridiques et commerciales, avec une validité nationale et internationale immédiate.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Service 1 -->
+            <div class="grid md:grid-cols-3 gap-6">
                 <div class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-accent-200 fade-in-up">
                     <div class="w-14 h-14 bg-primary-500 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent-600 transition-colors">
                         <i data-lucide="languages" class="w-7 h-7 text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-primary-500 mb-3" data-i18n="service1Title">Arabe ↔ Français</h3>
                     <p class="text-slate-600 text-sm leading-relaxed" data-i18n="service1Desc">
-                        Traduction assermentée entre l'arabe et le français pour tous vos documents officiels, administratifs et juridiques.
+                        Traduction officielle et certifiée pour l'ensemble des documents administratifs, juridiques et d'état civil.
                     </p>
                 </div>
                 
-                <!-- Service 2 -->
                 <div class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-accent-200 fade-in-up" style="transition-delay: 100ms;">
                     <div class="w-14 h-14 bg-primary-500 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent-600 transition-colors">
                         <i data-lucide="globe" class="w-7 h-7 text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-primary-500 mb-3" data-i18n="service2Title">Arabe ↔ Anglais</h3>
                     <p class="text-slate-600 text-sm leading-relaxed" data-i18n="service2Desc">
-                        Traduction certifiée entre l'arabe et l'anglais, idéale pour les démarches à l'international et les études à l'étranger.
+                        Traduction certifiée indispensable pour les démarches à l'international, les dossiers d'immigration, le commerce extérieur et les études à l'étranger.
                     </p>
                 </div>
                 
-                <!-- Service 3 -->
                 <div class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-accent-200 fade-in-up" style="transition-delay: 200ms;">
                     <div class="w-14 h-14 bg-primary-500 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent-600 transition-colors">
                         <i data-lucide="file-text" class="w-7 h-7 text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-primary-500 mb-3" data-i18n="service3Title">Français ↔ Anglais</h3>
                     <p class="text-slate-600 text-sm leading-relaxed" data-i18n="service3Desc">
-                        Traduction professionnelle entre le français et l'anglais pour les contrats, rapports et documents commerciaux.
-                    </p>
-                </div>
-                
-                <!-- Service 4 -->
-                <div class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-accent-200 fade-in-up" style="transition-delay: 300ms;">
-                    <div class="w-14 h-14 bg-primary-500 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent-600 transition-colors">
-                        <i data-lucide="stamp" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-primary-500 mb-3" data-i18n="service4Title">Légalisation</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="service4Desc">
-                        Légalisation et certification de documents pour une validité officielle auprès des administrations et ambassades.
+                        Traduction professionnelle et technique adaptée aux contrats commerciaux, rapports financiers, statuts et marchés publics.
                     </p>
                 </div>
             </div>
@@ -411,10 +377,10 @@
                     <div class="w-8 h-px bg-accent-600"></div>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-bold text-primary-500 mb-4" data-i18n="docsTitle">
-                    Documents que nous traduisons
+                    Documents Traités
                 </h2>
                 <p class="text-slate-600" data-i18n="docsDesc">
-                    Nous prenons en charge la traduction de tous types de documents officiels et administratifs.
+                    Prise en charge intégrale et certification officielle par sceau de justice pour une grande diversité de documents.
                 </p>
             </div>
             
@@ -425,7 +391,7 @@
                     </div>
                     <div>
                         <h3 class="font-bold text-primary-500 mb-1" data-i18n="doc1Title">État Civil</h3>
-                        <p class="text-sm text-slate-600" data-i18n="doc1Desc">Actes de naissance, mariage, décès, certificats de résidence.</p>
+                        <p class="text-sm text-slate-600" data-i18n="doc1Desc">Actes de naissance, mariage, décès, livrets de famille, certificats de résidence.</p>
                     </div>
                 </div>
                 
@@ -434,8 +400,8 @@
                         <i data-lucide="graduation-cap" class="w-6 h-6 text-accent-600"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-primary-500 mb-1" data-i18n="doc2Title">Éducation</h3>
-                        <p class="text-sm text-slate-600" data-i18n="doc2Desc">Diplômes, relevés de notes, attestations, certificats de scolarité.</p>
+                        <h3 class="font-bold text-primary-500 mb-1" data-i18n="doc2Title">Éducation & Universitaire</h3>
+                        <p class="text-sm text-slate-600" data-i18n="doc2Desc">Diplômes, relevés de notes, attestations de succès, certificats de scolarité.</p>
                     </div>
                 </div>
                 
@@ -444,8 +410,8 @@
                         <i data-lucide="scale" class="w-6 h-6 text-accent-600"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-primary-500 mb-1" data-i18n="doc3Title">Juridique</h3>
-                        <p class="text-sm text-slate-600" data-i18n="doc3Desc">Contrats, jugements, procurations, statuts de sociétés.</p>
+                        <h3 class="font-bold text-primary-500 mb-1" data-i18n="doc3Title">Juridique & Judiciaire</h3>
+                        <p class="text-sm text-slate-600" data-i18n="doc3Desc">Jugements, contrats, procurations, statuts de sociétés, casiers judiciaires.</p>
                     </div>
                 </div>
                 
@@ -454,8 +420,8 @@
                         <i data-lucide="briefcase" class="w-6 h-6 text-accent-600"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-primary-500 mb-1" data-i18n="doc4Title">Commercial</h3>
-                        <p class="text-sm text-slate-600" data-i18n="doc4Desc">Factures, bilans, registres de commerce, appels d'offres.</p>
+                        <h3 class="font-bold text-primary-500 mb-1" data-i18n="doc4Title">Commercial & Douanes</h3>
+                        <p class="text-sm text-slate-600" data-i18n="doc4Desc">Factures commerciales, bilans comptables, registres de commerce, appels d'offres.</p>
                     </div>
                 </div>
                 
@@ -464,8 +430,8 @@
                         <i data-lucide="credit-card" class="w-6 h-6 text-accent-600"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-primary-500 mb-1" data-i18n="doc5Title">Identité</h3>
-                        <p class="text-sm text-slate-600" data-i18n="doc5Desc">Passeports, cartes d'identité, permis de conduire, casiers judiciaires.</p>
+                        <h3 class="font-bold text-primary-500 mb-1" data-i18n="doc5Title">Identité & Voyage</h3>
+                        <p class="text-sm text-slate-600" data-i18n="doc5Desc">Passeports, cartes nationales d'identité, permis de conduire.</p>
                     </div>
                 </div>
                 
@@ -475,7 +441,120 @@
                     </div>
                     <div>
                         <h3 class="font-bold text-primary-500 mb-1" data-i18n="doc6Title">Marchés Publics</h3>
-                        <p class="text-sm text-slate-600" data-i18n="doc6Desc">Dossiers de soumission, certificats, documents administratifs.</p>
+                        <p class="text-sm text-slate-600" data-i18n="doc6Desc">Cahiers des charges, dossiers de soumission, certificats de qualification.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Note importante -->
+            <div class="mt-12 bg-amber-50 border-l-4 border-accent-500 rounded-r-xl p-6 fade-in-up">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="alert-circle" class="w-6 h-6 text-accent-600"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary-500 mb-2" data-i18n="noteTitle">Note importante</h4>
+                        <p class="text-sm text-slate-700 leading-relaxed" data-i18n="noteDesc">
+                            Conformément à la réglementation régissant la profession en Algérie, le bureau n'effectue aucune légalisation d'actes tiers. Seuls les documents traduits et traités au sein du cabinet sont revêtus du sceau officiel et de la signature de l'auxiliaire de justice assermenté.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Section -->
+    <section id="international" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative fade-in-up">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://image.qwenlm.ai/public_source/52b02057-f608-4b86-8820-22c89bf41c2e/11908850f-2e4a-41b8-a991-62051f45aac0.png" alt="Documents pour démarches internationales" class="w-full h-[450px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/60 to-transparent"></div>
+                    </div>
+                </div>
+                
+                <div class="fade-in-up" style="transition-delay: 200ms;">
+                    <div class="inline-flex items-center gap-2 text-accent-600 font-semibold text-sm uppercase tracking-wider mb-4">
+                        <div class="w-8 h-px bg-accent-600"></div>
+                        <span data-i18n="intlBadge">International</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-primary-500 mb-6 leading-tight" data-i18n="intlTitle">
+                        Démarches Internationales, Visas et Études à l'Étranger
+                    </h2>
+                    <p class="text-slate-600 mb-4 leading-relaxed" data-i18n="intlDesc1">
+                        Qu'il s'agisse d'un projet d'études (Campus France, universités anglophones), d'une procédure d'immigration (Canada, Europe, Golfe) ou d'une demande de visa, la conformité des documents est un facteur décisif.
+                    </p>
+                    <p class="text-slate-600 mb-6 leading-relaxed" data-i18n="intlDesc2">
+                        Le cabinet assure la traduction certifiée de tous les dossiers requis (diplômes, relevés de notes, attestations de fonctions, fiches de paie, actes d'état civil) en stricte conformité avec les exigences des ambassades et des organismes internationaux. Chaque traduction délivrée est prête à être produite directement auprès des autorités consulaires.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm">
+                            <i data-lucide="graduation-cap" class="w-5 h-5 text-accent-600"></i>
+                            <span class="text-sm font-medium text-primary-500" data-i18n="intlItem1">Études à l'étranger</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm">
+                            <i data-lucide="plane" class="w-5 h-5 text-accent-600"></i>
+                            <span class="text-sm font-medium text-primary-500" data-i18n="intlItem2">Immigration</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm">
+                            <i data-lucide="file-check" class="w-5 h-5 text-accent-600"></i>
+                            <span class="text-sm font-medium text-primary-500" data-i18n="intlItem3">Demandes de visa</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm">
+                            <i data-lucide="users" class="w-5 h-5 text-accent-600"></i>
+                            <span class="text-sm font-medium text-primary-500" data-i18n="intlItem4">Regroupement familial</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Section -->
+    <section id="entreprises" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-in-up">
+                    <div class="inline-flex items-center gap-2 text-accent-600 font-semibold text-sm uppercase tracking-wider mb-4">
+                        <div class="w-8 h-px bg-accent-600"></div>
+                        <span data-i18n="bizBadge">Entreprises & Professionnels</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-primary-500 mb-6 leading-tight" data-i18n="bizTitle">
+                        Solutions de Traduction pour les Entreprises et PME
+                    </h2>
+                    <p class="text-slate-600 mb-4 leading-relaxed" data-i18n="bizDesc1">
+                        Pour les opérateurs économiques, les importateurs et les cabinets juridiques, la précision des termes est une question de sécurité juridique. Le bureau propose un accompagnement sur mesure pour la traduction certifiée des documents corporatifs : statuts de sociétés, registres de commerce, bilans comptables, contrats de partenariat, dossiers de soumission aux marchés publics et appels d'offres internationaux.
+                    </p>
+                    <p class="text-slate-600 mb-6 leading-relaxed" data-i18n="bizDesc2">
+                        Le traitement des volumes importants est optimisé pour garantir le respect des calendriers d'affaires, sous le sceau de la confidentialité la plus stricte.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-lg">
+                            <i data-lucide="building" class="w-5 h-5 text-accent-600"></i>
+                            <span class="text-sm font-medium text-primary-500" data-i18n="bizItem1">Statuts de sociétés</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-lg">
+                            <i data-lucide="file-text" class="w-5 h-5 text-accent-600"></i>
+                            <span class="text-sm font-medium text-primary-500" data-i18n="bizItem2">Contrats de partenariat</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-lg">
+                            <i data-lucide="trending-up" class="w-5 h-5 text-accent-600"></i>
+                            <span class="text-sm font-medium text-primary-500" data-i18n="bizItem3">Bilans comptables</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-lg">
+                            <i data-lucide="briefcase" class="w-5 h-5 text-accent-600"></i>
+                            <span class="text-sm font-medium text-primary-500" data-i18n="bizItem4">Appels d'offres</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative fade-in-up" style="transition-delay: 200ms;">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://image.qwenlm.ai/public_source/52b02057-f608-4b86-8820-22c89bf41c2e/1be11bdf3-b589-41e8-a0c7-3fa5eee75908.png" alt="Documents commerciaux certifiés" class="w-full h-[450px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/60 to-transparent"></div>
                     </div>
                 </div>
             </div>
@@ -502,63 +581,21 @@
             </div>
             
             <div class="relative max-w-4xl mx-auto fade-in-up">
-                <div class="testimonial-carousel">
-                    <div class="testimonial-slide active bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 sm:p-12 text-center">
-                        <div class="flex justify-center gap-1 mb-6">
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                        </div>
-                        <p class="text-white text-lg sm:text-xl leading-relaxed mb-8 italic" data-i18n="testi1Text">
-                            "Service exceptionnel ! Mes diplômes ont été traduits en moins de 24h avec une qualité irréprochable. Je recommande vivement pour toutes les démarches universitaires à l'étranger."
-                        </p>
-                        <div>
-                            <div class="font-bold text-white text-lg" data-i18n="testi1Name">Fatima B.</div>
-                            <div class="text-slate-300 text-sm" data-i18n="testi1Role">Étudiante - Master au Canada</div>
-                        </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 sm:p-12 text-center">
+                    <div class="flex justify-center gap-1 mb-6">
+                        <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
                     </div>
-                    
-                    <div class="testimonial-slide hidden bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 sm:p-12 text-center">
-                        <div class="flex justify-center gap-1 mb-6">
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                        </div>
-                        <p class="text-white text-lg sm:text-xl leading-relaxed mb-8 italic" data-i18n="testi2Text">
-                            "En tant qu'avocat, j'exige une précision terminologique absolue. Maître Ladj.A fournit un travail rigoureux et fiable pour tous nos dossiers juridiques internationaux."
-                        </p>
-                        <div>
-                            <div class="font-bold text-white text-lg" data-i18n="testi2Name">Maître Benali K.</div>
-                            <div class="text-slate-300 text-sm" data-i18n="testi2Role">Avocat - Droit International</div>
-                        </div>
+                    <p class="text-white text-lg sm:text-xl leading-relaxed mb-8 italic" data-i18n="testi1Text">
+                        « Un partenaire de confiance pour notre PME. Gestion efficace des volumes importants de contrats commerciaux. Confidentialité, exactitude juridique et professionnalisme au rendez-vous. »
+                    </p>
+                    <div>
+                        <div class="font-bold text-white text-lg" data-i18n="testi1Name">Karim M.</div>
+                        <div class="text-slate-300 text-sm" data-i18n="testi1Role">Chef d'entreprise - Import/Export</div>
                     </div>
-                    
-                    <div class="testimonial-slide hidden bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 sm:p-12 text-center">
-                        <div class="flex justify-center gap-1 mb-6">
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                            <i data-lucide="star" class="w-5 h-5 text-accent-400 fill-accent-400"></i>
-                        </div>
-                        <p class="text-white text-lg sm:text-xl leading-relaxed mb-8 italic" data-i18n="testi3Text">
-                            "Partenaire de confiance pour notre PME. Gestion efficace des volumes importants de contrats commerciaux. Confidentialité et professionnalisme au rendez-vous."
-                        </p>
-                        <div>
-                            <div class="font-bold text-white text-lg" data-i18n="testi3Name">Karim M.</div>
-                            <div class="text-slate-300 text-sm" data-i18n="testi3Role">Chef d'entreprise - Import/Export</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="flex justify-center gap-3 mt-8">
-                    <button class="testi-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-colors active:bg-accent-400" data-testi="0"></button>
-                    <button class="testi-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-colors" data-testi="1"></button>
-                    <button class="testi-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-colors" data-testi="2"></button>
                 </div>
             </div>
         </div>
@@ -574,15 +611,14 @@
                     <div class="w-8 h-px bg-accent-600"></div>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-bold text-primary-500 mb-4" data-i18n="contactTitle">
-                    Contactez-nous
+                    Contact & Demande de Devis
                 </h2>
                 <p class="text-slate-600" data-i18n="contactDesc">
-                    Besoin d'une traduction ? Remplissez le formulaire ou contactez-nous directement via WhatsApp.
+                    Pour toute demande de traduction officielle, le formulaire ci-dessous est à disposition. Une ligne WhatsApp directe est également disponible pour une assistance rapide.
                 </p>
             </div>
             
             <div class="grid lg:grid-cols-5 gap-8">
-                <!-- Contact Info -->
                 <div class="lg:col-span-2 space-y-6 fade-in-up">
                     <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
                         <div class="flex items-start gap-4">
@@ -617,8 +653,8 @@
                                 <i data-lucide="clock" class="w-6 h-6 text-accent-600"></i>
                             </div>
                             <div>
-                                <h3 class="font-bold text-primary-500 mb-1" data-i18n="contactHoursTitle">Horaires</h3>
-                                <p class="text-sm text-slate-600" data-i18n="contactHours">Samedi - Jeudi : 08h30 - 16h30</p>
+                                <h3 class="font-bold text-primary-500 mb-1" data-i18n="contactHoursTitle">Horaires d'ouverture</h3>
+                                <p class="text-sm text-slate-600" data-i18n="contactHours">Samedi – Jeudi : 08h30 – 16h30</p>
                                 <p class="text-sm text-red-500 font-medium mt-1" data-i18n="contactClosed">Vendredi : Fermé</p>
                             </div>
                         </div>
@@ -631,14 +667,13 @@
                             </div>
                             <div>
                                 <h3 class="font-bold mb-1" data-i18n="contactWhatsappTitle">WhatsApp Direct</h3>
-                                <p class="text-sm opacity-90" data-i18n="contactWhatsappDesc">Réponse rapide garantie</p>
+                                <p class="text-sm opacity-90" data-i18n="contactWhatsappDesc">Liaison rapide pour l'étude des documents</p>
                             </div>
                             <i data-lucide="arrow-right" class="w-5 h-5 ms-auto rtl-flip"></i>
                         </div>
                     </a>
                 </div>
                 
-                <!-- Contact Form -->
                 <div class="lg:col-span-3 fade-in-up" style="transition-delay: 200ms;">
                     <form id="contactForm" class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
                         <div class="grid sm:grid-cols-2 gap-5 mb-5">
@@ -665,7 +700,6 @@
                                     <option value="ar-fr" data-i18n="formService1">Arabe ↔ Français</option>
                                     <option value="ar-en" data-i18n="formService2">Arabe ↔ Anglais</option>
                                     <option value="fr-en" data-i18n="formService3">Français ↔ Anglais</option>
-                                    <option value="legalisation" data-i18n="formService4">Légalisation</option>
                                 </select>
                             </div>
                             <div>
@@ -673,7 +707,7 @@
                                 <select name="docType" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent-500 focus:ring-2 focus:ring-accent-100 outline-none transition-all text-sm bg-white">
                                     <option value="" data-i18n="formDocPlaceholder">Sélectionnez...</option>
                                     <option value="civil" data-i18n="formDoc1">État civil</option>
-                                    <option value="education" data-i18n="formDoc2">Éducation</option>
+                                    <option value="education" data-i18n="formDoc2">Éducation / Universitaire</option>
                                     <option value="legal" data-i18n="formDoc3">Juridique</option>
                                     <option value="commercial" data-i18n="formDoc4">Commercial</option>
                                     <option value="identity" data-i18n="formDoc5">Identité</option>
@@ -687,7 +721,6 @@
                             <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent-500 focus:ring-2 focus:ring-accent-100 outline-none transition-all text-sm resize-none"></textarea>
                         </div>
                         
-                        <!-- Honeypot -->
                         <div class="gotcha">
                             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
                         </div>
@@ -713,7 +746,6 @@
                 </div>
             </div>
             
-            <!-- Google Maps -->
             <div class="mt-12 rounded-2xl overflow-hidden shadow-lg border border-slate-200 fade-in-up">
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3197.123456789!2d3.2133474!3d36.7116438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzbCsDQyJzQxLjkiTiAzwrAxMic0OC4wIkU!5e0!3m2!1sfr!2sdz!4v1234567890" 
@@ -740,11 +772,11 @@
                         </div>
                         <div>
                             <div class="text-white font-bold" data-i18n="footerLogo">Maître Ladj.A</div>
-                            <div class="text-xs text-slate-400" data-i18n="footerLogoSub">Traduction Officielle</div>
+                            <div class="text-xs text-slate-400" data-i18n="footerLogoSub">Traduction Officielle & Certifiée</div>
                         </div>
                     </div>
                     <p class="text-sm text-slate-400 leading-relaxed mb-4 max-w-md" data-i18n="footerDesc">
-                        Bureau de traduction assermentée et légalisation de documents à Dar El Beïda, Alger. Votre partenaire de confiance pour toutes vos traductions officielles.
+                        Bureau de traduction assermentée agréé par le Ministère de la Justice, rattaché à la Cour d'Alger. Validité juridique nationale et internationale de tous vos documents officiels.
                     </p>
                 </div>
                 
@@ -754,6 +786,7 @@
                         <li><a href="#accueil" class="hover:text-accent-400 transition-colors" data-i18n="navHome">Accueil</a></li>
                         <li><a href="#apropos" class="hover:text-accent-400 transition-colors" data-i18n="navAbout">À Propos</a></li>
                         <li><a href="#services" class="hover:text-accent-400 transition-colors" data-i18n="navServices">Services</a></li>
+                        <li><a href="#international" class="hover:text-accent-400 transition-colors" data-i18n="navInternational">International</a></li>
                         <li><a href="#contact" class="hover:text-accent-400 transition-colors" data-i18n="navContact">Contact</a></li>
                         <li><a href="#mentions" class="hover:text-accent-400 transition-colors" data-i18n="footerLegal">Mentions Légales</a></li>
                     </ul>
@@ -802,13 +835,11 @@
         <i data-lucide="message-circle" class="w-7 h-7 fill-white"></i>
     </a>
     
-    <!-- Scroll to Top Button -->
     <button id="scrollTopBtn" class="fixed bottom-6 left-6 z-50 w-12 h-12 bg-primary-500 hover:bg-primary-600 text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 flex items-center justify-center">
         <i data-lucide="chevron-up" class="w-6 h-6"></i>
     </button>
 
     <script>
-        // Translation Dictionary
         const translations = {
             fr: {
                 logoTitle: "Maître Ladj.A",
@@ -817,11 +848,13 @@
                 navAbout: "À Propos",
                 navServices: "Services",
                 navDocuments: "Documents",
+                navInternational: "International",
+                navBusiness: "Entreprises",
                 navContact: "Contact",
-                heroBadge: "Traducteur Assermenté Agréé",
-                heroTitle1: "Bureau de Traduction",
-                heroTitle2: "Officielle Maître Ladj.A",
-                heroDesc: "Votre partenaire de confiance pour la traduction assermentée et la légalisation de documents à Dar El Beïda, Alger. Précision, confidentialité et rapidité garanties.",
+                heroBadge: "Traductrice Officielle Assermentée",
+                heroTitle1: "Bureau de Traduction Officielle",
+                heroTitle2: "Maître Ladj.A",
+                heroDesc: "Agréée par le Ministère de la Justice, rattachée à la Cour d'Alger. Traduction certifiée et sceau officiel d'auxiliaire de justice pour une validité juridique absolue.",
                 heroCta1: "Demander une traduction",
                 heroCta2: "WhatsApp Direct",
                 stat1: "Années d'expérience",
@@ -829,66 +862,79 @@
                 stat3: "Langues de travail",
                 stat4: "Confidentialité",
                 aboutBadge: "À Propos",
-                aboutTitle: "L'excellence au service de vos traductions officielles",
-                aboutDesc1: "Le Bureau de Traduction Officielle Maître Ladj.A est un cabinet agréé situé à Dar El Beïda, Alger. Nous sommes spécialisés dans la traduction assermentée et la légalisation de documents pour les particuliers, les entreprises et les institutions.",
-                aboutDesc2: "Notre engagement : une précision terminologique rigoureuse, le respect strict des délais et une confidentialité absolue de vos documents sensibles.",
+                aboutTitle: "L'excellence au service de la traduction officielle",
+                aboutDesc1: "Le Bureau de Traduction Officielle Maître Ladj.A est un cabinet agréé situé à Dar El Beïda, Alger. Rattaché à la circonscription judiciaire du tribunal de Dar El Beïda, Cour d'Alger, le bureau prend en charge les demandes des particuliers, des entreprises et des institutions à travers tout le territoire national.",
+                aboutDesc2: "Chaque traduction délivrée est directement revêtue du sceau officiel d'auxiliaire de justice agréé par le Ministère de la Justice, garantissant ainsi sa validité juridique absolue auprès des administrations, des instances judiciaires et des représentations diplomatiques.",
+                aboutDesc3: "L'engagement du cabinet repose sur une précision terminologique rigoureuse, le respect strict des délais et une confidentialité absolue des documents confiés.",
                 value1Title: "Agréé & Assermenté",
                 value1Desc: "Reconnu par les autorités judiciaires",
-                value2Title: "Rapidité",
-                value2Desc: "Traitement express disponible",
-                value3Title: "Confidentialité",
-                value3Desc: "Protection absolue des données",
-                value4Title: "Qualité",
-                value4Desc: "Terminologie juridique précise",
+                value2Title: "Compétence Élargie",
+                value2Desc: "Basé à Dar El Beïda (Cour d'Alger), habilité national",
+                value3Title: "Rapidité",
+                value3Desc: "Traitement express disponible",
+                value4Title: "Confidentialité",
+                value4Desc: "Protection absolue des données",
+                value5Title: "Qualité & Expertise",
+                value5Desc: "15+ ans d'expérience en terminologie juridique, commerciale et technique",
                 aboutExp: "Années d'expertise",
                 servicesBadge: "Nos Services",
-                servicesTitle: "Services de traduction professionnelle",
-                servicesDesc: "Nous offrons une gamme complète de services de traduction assermentée pour répondre à tous vos besoins administratifs, juridiques et commerciaux.",
+                servicesTitle: "Services de Traduction Officielle",
+                servicesDesc: "Une gamme de prestations rigoureuses pour répondre aux exigences administratives, juridiques et commerciales, avec une validité nationale et internationale immédiate.",
                 service1Title: "Arabe ↔ Français",
-                service1Desc: "Traduction assermentée entre l'arabe et le français pour tous vos documents officiels, administratifs et juridiques.",
+                service1Desc: "Traduction officielle et certifiée pour l'ensemble des documents administratifs, juridiques et d'état civil.",
                 service2Title: "Arabe ↔ Anglais",
-                service2Desc: "Traduction certifiée entre l'arabe et l'anglais, idéale pour les démarches à l'international et les études à l'étranger.",
+                service2Desc: "Traduction certifiée indispensable pour les démarches à l'international, les dossiers d'immigration, le commerce extérieur et les études à l'étranger.",
                 service3Title: "Français ↔ Anglais",
-                service3Desc: "Traduction professionnelle entre le français et l'anglais pour les contrats, rapports et documents commerciaux.",
-                service4Title: "Légalisation",
-                service4Desc: "Légalisation et certification de documents pour une validité officielle auprès des administrations et ambassades.",
+                service3Desc: "Traduction professionnelle et technique adaptée aux contrats commerciaux, rapports financiers, statuts et marchés publics.",
                 docsBadge: "Types de Documents",
-                docsTitle: "Documents que nous traduisons",
-                docsDesc: "Nous prenons en charge la traduction de tous types de documents officiels et administratifs.",
+                docsTitle: "Documents Traités",
+                docsDesc: "Prise en charge intégrale et certification officielle par sceau de justice pour une grande diversité de documents.",
                 doc1Title: "État Civil",
-                doc1Desc: "Actes de naissance, mariage, décès, certificats de résidence.",
-                doc2Title: "Éducation",
-                doc2Desc: "Diplômes, relevés de notes, attestations, certificats de scolarité.",
-                doc3Title: "Juridique",
-                doc3Desc: "Contrats, jugements, procurations, statuts de sociétés.",
-                doc4Title: "Commercial",
-                doc4Desc: "Factures, bilans, registres de commerce, appels d'offres.",
-                doc5Title: "Identité",
-                doc5Desc: "Passeports, cartes d'identité, permis de conduire, casiers judiciaires.",
+                doc1Desc: "Actes de naissance, mariage, décès, livrets de famille, certificats de résidence.",
+                doc2Title: "Éducation & Universitaire",
+                doc2Desc: "Diplômes, relevés de notes, attestations de succès, certificats de scolarité.",
+                doc3Title: "Juridique & Judiciaire",
+                doc3Desc: "Jugements, contrats, procurations, statuts de sociétés, casiers judiciaires.",
+                doc4Title: "Commercial & Douanes",
+                doc4Desc: "Factures commerciales, bilans comptables, registres de commerce, appels d'offres.",
+                doc5Title: "Identité & Voyage",
+                doc5Desc: "Passeports, cartes nationales d'identité, permis de conduire.",
                 doc6Title: "Marchés Publics",
-                doc6Desc: "Dossiers de soumission, certificats, documents administratifs.",
+                doc6Desc: "Cahiers des charges, dossiers de soumission, certificats de qualification.",
+                noteTitle: "Note importante",
+                noteDesc: "Conformément à la réglementation régissant la profession en Algérie, le bureau n'effectue aucune légalisation d'actes tiers. Seuls les documents traduits et traités au sein du cabinet sont revêtus du sceau officiel et de la signature de l'auxiliaire de justice assermenté.",
+                intlBadge: "International",
+                intlTitle: "Démarches Internationales, Visas et Études à l'Étranger",
+                intlDesc1: "Qu'il s'agisse d'un projet d'études (Campus France, universités anglophones), d'une procédure d'immigration (Canada, Europe, Golfe) ou d'une demande de visa, la conformité des documents est un facteur décisif.",
+                intlDesc2: "Le cabinet assure la traduction certifiée de tous les dossiers requis (diplômes, relevés de notes, attestations de fonctions, fiches de paie, actes d'état civil) en stricte conformité avec les exigences des ambassades et des organismes internationaux. Chaque traduction délivrée est prête à être produite directement auprès des autorités consulaires.",
+                intlItem1: "Études à l'étranger",
+                intlItem2: "Immigration",
+                intlItem3: "Demandes de visa",
+                intlItem4: "Regroupement familial",
+                bizBadge: "Entreprises & Professionnels",
+                bizTitle: "Solutions de Traduction pour les Entreprises et PME",
+                bizDesc1: "Pour les opérateurs économiques, les importateurs et les cabinets juridiques, la précision des termes est une question de sécurité juridique. Le bureau propose un accompagnement sur mesure pour la traduction certifiée des documents corporatifs : statuts de sociétés, registres de commerce, bilans comptables, contrats de partenariat, dossiers de soumission aux marchés publics et appels d'offres internationaux.",
+                bizDesc2: "Le traitement des volumes importants est optimisé pour garantir le respect des calendriers d'affaires, sous le sceau de la confidentialité la plus stricte.",
+                bizItem1: "Statuts de sociétés",
+                bizItem2: "Contrats de partenariat",
+                bizItem3: "Bilans comptables",
+                bizItem4: "Appels d'offres",
                 testiBadge: "Témoignages",
                 testiTitle: "Ce que disent nos clients",
-                testi1Text: "Service exceptionnel ! Mes diplômes ont été traduits en moins de 24h avec une qualité irréprochable. Je recommande vivement pour toutes les démarches universitaires à l'étranger.",
-                testi1Name: "Fatima B.",
-                testi1Role: "Étudiante - Master au Canada",
-                testi2Text: "En tant qu'avocat, j'exige une précision terminologique absolue. Maître Ladj.A fournit un travail rigoureux et fiable pour tous nos dossiers juridiques internationaux.",
-                testi2Name: "Maître Benali K.",
-                testi2Role: "Avocat - Droit International",
-                testi3Text: "Partenaire de confiance pour notre PME. Gestion efficace des volumes importants de contrats commerciaux. Confidentialité et professionnalisme au rendez-vous.",
-                testi3Name: "Karim M.",
-                testi3Role: "Chef d'entreprise - Import/Export",
+                testi1Text: "« Un partenaire de confiance pour notre PME. Gestion efficace des volumes importants de contrats commerciaux. Confidentialité, exactitude juridique et professionnalisme au rendez-vous. »",
+                testi1Name: "Karim M.",
+                testi1Role: "Chef d'entreprise - Import/Export",
                 contactBadge: "Contact",
-                contactTitle: "Contactez-nous",
-                contactDesc: "Besoin d'une traduction ? Remplissez le formulaire ou contactez-nous directement via WhatsApp.",
+                contactTitle: "Contact & Demande de Devis",
+                contactDesc: "Pour toute demande de traduction officielle, le formulaire ci-dessous est à disposition. Une ligne WhatsApp directe est également disponible pour une assistance rapide.",
                 contactAddressTitle: "Adresse",
                 contactAddress: "N°14, Cité Commandant Si Lakhdar (Ex-Soufflerie Ilot B), Dar El Beïda 16033, Alger, Algérie",
                 contactPhoneTitle: "Téléphone",
-                contactHoursTitle: "Horaires",
-                contactHours: "Samedi - Jeudi : 08h30 - 16h30",
+                contactHoursTitle: "Horaires d'ouverture",
+                contactHours: "Samedi – Jeudi : 08h30 – 16h30",
                 contactClosed: "Vendredi : Fermé",
                 contactWhatsappTitle: "WhatsApp Direct",
-                contactWhatsappDesc: "Réponse rapide garantie",
+                contactWhatsappDesc: "Liaison rapide pour l'étude des documents",
                 formName: "Nom complet *",
                 formPhone: "Téléphone *",
                 formEmail: "Email *",
@@ -897,11 +943,10 @@
                 formService1: "Arabe ↔ Français",
                 formService2: "Arabe ↔ Anglais",
                 formService3: "Français ↔ Anglais",
-                formService4: "Légalisation",
                 formDocType: "Type de document",
                 formDocPlaceholder: "Sélectionnez...",
                 formDoc1: "État civil",
-                formDoc2: "Éducation",
+                formDoc2: "Éducation / Universitaire",
                 formDoc3: "Juridique",
                 formDoc4: "Commercial",
                 formDoc5: "Identité",
@@ -911,8 +956,8 @@
                 formSubmit: "Envoyer la demande",
                 formSuccessMsg: "Votre message a été envoyé avec succès. Nous vous contacterons bientôt.",
                 footerLogo: "Maître Ladj.A",
-                footerLogoSub: "Traduction Officielle",
-                footerDesc: "Bureau de traduction assermentée et légalisation de documents à Dar El Beïda, Alger. Votre partenaire de confiance pour toutes vos traductions officielles.",
+                footerLogoSub: "Traduction Officielle & Certifiée",
+                footerDesc: "Bureau de traduction assermentée agréé par le Ministère de la Justice, rattaché à la Cour d'Alger. Validité juridique nationale et internationale de tous vos documents officiels.",
                 footerLinks: "Liens Rapides",
                 footerContact: "Contact",
                 footerLegal: "Mentions Légales",
@@ -923,7 +968,7 @@
                 legalAgrement: "Agrément :",
                 footerCopyright: "© 2026 Bureau de Traduction Officielle Maître Ladj.A. Tous droits réservés.",
                 footerLaw: "Conforme à la loi n° 18-07 relative à la protection des données",
-                whatsappMsg: "Bonjour, je souhaite obtenir une traduction."
+                whatsappMsg: "Bonjour, je souhaite obtenir une traduction officielle."
             },
             en: {
                 logoTitle: "Master Ladj.A",
@@ -932,11 +977,13 @@
                 navAbout: "About",
                 navServices: "Services",
                 navDocuments: "Documents",
+                navInternational: "International",
+                navBusiness: "Business",
                 navContact: "Contact",
-                heroBadge: "Certified Sworn Translator",
-                heroTitle1: "Official Translation",
-                heroTitle2: "Bureau Master Ladj.A",
-                heroDesc: "Your trusted partner for sworn translation and document legalization in Dar El Beïda, Algiers. Precision, confidentiality and speed guaranteed.",
+                heroBadge: "Sworn Official Translator",
+                heroTitle1: "Official Translation Bureau",
+                heroTitle2: "Master Ladj.A",
+                heroDesc: "Accredited by the Ministry of Justice, attached to the Court of Algiers. Certified translation and official seal of sworn auxiliary of justice for absolute legal validity.",
                 heroCta1: "Request a translation",
                 heroCta2: "Direct WhatsApp",
                 stat1: "Years of experience",
@@ -945,65 +992,78 @@
                 stat4: "Confidentiality",
                 aboutBadge: "About Us",
                 aboutTitle: "Excellence in official translation services",
-                aboutDesc1: "The Official Translation Bureau Master Ladj.A is an accredited firm located in Dar El Beïda, Algiers. We specialize in sworn translation and document legalization for individuals, businesses and institutions.",
-                aboutDesc2: "Our commitment: rigorous terminological precision, strict adherence to deadlines and absolute confidentiality of your sensitive documents.",
+                aboutDesc1: "The Official Translation Bureau Master Ladj.A is an accredited firm located in Dar El Beïda, Algiers. Attached to the judicial district of the Dar El Beïda court, Court of Algiers, the bureau handles requests from individuals, businesses and institutions throughout the national territory.",
+                aboutDesc2: "Each translation issued is directly affixed with the official seal of auxiliary of justice accredited by the Ministry of Justice, thus guaranteeing its absolute legal validity with administrations, judicial bodies and diplomatic representations.",
+                aboutDesc3: "The firm's commitment is based on rigorous terminological precision, strict adherence to deadlines and absolute confidentiality of entrusted documents.",
                 value1Title: "Accredited & Sworn",
                 value1Desc: "Recognized by judicial authorities",
-                value2Title: "Speed",
-                value2Desc: "Express processing available",
-                value3Title: "Confidentiality",
-                value3Desc: "Absolute data protection",
-                value4Title: "Quality",
-                value4Desc: "Precise legal terminology",
+                value2Title: "Extended Competence",
+                value2Desc: "Based in Dar El Beïda (Court of Algiers), nationally authorized",
+                value3Title: "Speed",
+                value3Desc: "Express processing available",
+                value4Title: "Confidentiality",
+                value4Desc: "Absolute data protection",
+                value5Title: "Quality & Expertise",
+                value5Desc: "15+ years of experience in legal, commercial and technical terminology",
                 aboutExp: "Years of expertise",
                 servicesBadge: "Our Services",
-                servicesTitle: "Professional translation services",
-                servicesDesc: "We offer a complete range of sworn translation services to meet all your administrative, legal and commercial needs.",
+                servicesTitle: "Official Translation Services",
+                servicesDesc: "A range of rigorous services to meet administrative, legal and commercial requirements, with immediate national and international validity.",
                 service1Title: "Arabic ↔ French",
-                service1Desc: "Sworn translation between Arabic and French for all your official, administrative and legal documents.",
+                service1Desc: "Official and certified translation for all administrative, legal and civil status documents.",
                 service2Title: "Arabic ↔ English",
-                service2Desc: "Certified translation between Arabic and English, ideal for international procedures and studies abroad.",
+                service2Desc: "Certified translation essential for international procedures, immigration files, foreign trade and studies abroad.",
                 service3Title: "French ↔ English",
-                service3Desc: "Professional translation between French and English for contracts, reports and commercial documents.",
-                service4Title: "Legalization",
-                service4Desc: "Legalization and certification of documents for official validity with administrations and embassies.",
+                service3Desc: "Professional and technical translation adapted to commercial contracts, financial reports, statutes and public procurement.",
                 docsBadge: "Document Types",
-                docsTitle: "Documents we translate",
-                docsDesc: "We handle the translation of all types of official and administrative documents.",
+                docsTitle: "Documents Processed",
+                docsDesc: "Full handling and official certification by seal of justice for a wide variety of documents.",
                 doc1Title: "Civil Status",
-                doc1Desc: "Birth, marriage, death certificates, residence certificates.",
-                doc2Title: "Education",
-                doc2Desc: "Diplomas, transcripts, certificates, school attendance records.",
-                doc3Title: "Legal",
-                doc3Desc: "Contracts, judgments, powers of attorney, company statutes.",
-                doc4Title: "Commercial",
-                doc4Desc: "Invoices, balance sheets, trade registers, tenders.",
-                doc5Title: "Identity",
-                doc5Desc: "Passports, ID cards, driver's licenses, criminal records.",
+                doc1Desc: "Birth, marriage, death certificates, family books, residence certificates.",
+                doc2Title: "Education & University",
+                doc2Desc: "Diplomas, transcripts, success certificates, school attendance records.",
+                doc3Title: "Legal & Judicial",
+                doc3Desc: "Judgments, contracts, powers of attorney, company statutes, criminal records.",
+                doc4Title: "Commercial & Customs",
+                doc4Desc: "Commercial invoices, accounting statements, trade registers, tenders.",
+                doc5Title: "Identity & Travel",
+                doc5Desc: "Passports, national ID cards, driver's licenses.",
                 doc6Title: "Public Procurement",
-                doc6Desc: "Submission files, certificates, administrative documents.",
+                doc6Desc: "Specifications, submission files, qualification certificates.",
+                noteTitle: "Important Notice",
+                noteDesc: "In accordance with the regulations governing the profession in Algeria, the bureau does not perform legalization of third-party documents. Only documents translated and processed within the firm are affixed with the official seal and signature of the sworn auxiliary of justice.",
+                intlBadge: "International",
+                intlTitle: "International Procedures, Visas and Studies Abroad",
+                intlDesc1: "Whether it's a study project (Campus France, English-speaking universities), an immigration procedure (Canada, Europe, Gulf) or a visa application, document compliance is a decisive factor.",
+                intlDesc2: "The firm provides certified translation of all required files (diplomas, transcripts, employment certificates, pay slips, civil status documents) in strict compliance with the requirements of embassies and international organizations. Each translation issued is ready to be submitted directly to consular authorities.",
+                intlItem1: "Studies abroad",
+                intlItem2: "Immigration",
+                intlItem3: "Visa applications",
+                intlItem4: "Family reunification",
+                bizBadge: "Business & Professionals",
+                bizTitle: "Translation Solutions for Businesses and SMEs",
+                bizDesc1: "For economic operators, importers and law firms, precision of terms is a matter of legal security. The bureau offers tailored support for certified translation of corporate documents: company statutes, trade registers, accounting statements, partnership contracts, public procurement submission files and international tenders.",
+                bizDesc2: "The processing of large volumes is optimized to ensure compliance with business schedules, under the seal of the strictest confidentiality.",
+                bizItem1: "Company statutes",
+                bizItem2: "Partnership contracts",
+                bizItem3: "Accounting statements",
+                bizItem4: "Tenders",
                 testiBadge: "Testimonials",
                 testiTitle: "What our clients say",
-                testi1Text: "Exceptional service! My diplomas were translated in less than 24 hours with impeccable quality. I highly recommend it for all university procedures abroad.",
-                testi1Name: "Fatima B.",
-                testi1Role: "Student - Master's in Canada",
-                testi2Text: "As a lawyer, I demand absolute terminological precision. Master Ladj.A provides rigorous and reliable work for all our international legal files.",
-                testi2Name: "Master Benali K.",
-                testi2Role: "Lawyer - International Law",
-                testi3Text: "Trusted partner for our SME. Efficient management of large volumes of commercial contracts. Confidentiality and professionalism delivered.",
-                testi3Name: "Karim M.",
-                testi3Role: "Business Owner - Import/Export",
+                testi1Text: "\"A trusted partner for our SME. Efficient management of large volumes of commercial contracts. Confidentiality, legal accuracy and professionalism delivered.\"",
+                testi1Name: "Karim M.",
+                testi1Role: "Business Owner - Import/Export",
                 contactBadge: "Contact",
-                contactTitle: "Contact Us",
-                contactDesc: "Need a translation? Fill out the form or contact us directly via WhatsApp.",
+                contactTitle: "Contact & Quote Request",
+                contactDesc: "For any official translation request, the form below is available. A direct WhatsApp line is also available for quick assistance.",
                 contactAddressTitle: "Address",
                 contactAddress: "No. 14, Cité Commandant Si Lakhdar (Ex-Soufflerie Ilot B), Dar El Beïda 16033, Algiers, Algeria",
                 contactPhoneTitle: "Phone",
-                contactHoursTitle: "Hours",
-                contactHours: "Saturday - Thursday: 08:30 AM - 04:30 PM",
+                contactHoursTitle: "Opening Hours",
+                contactHours: "Saturday – Thursday: 08:30 AM – 04:30 PM",
                 contactClosed: "Friday: Closed",
                 contactWhatsappTitle: "Direct WhatsApp",
-                contactWhatsappDesc: "Fast response guaranteed",
+                contactWhatsappDesc: "Quick connection for document review",
                 formName: "Full name *",
                 formPhone: "Phone *",
                 formEmail: "Email *",
@@ -1012,11 +1072,10 @@
                 formService1: "Arabic ↔ French",
                 formService2: "Arabic ↔ English",
                 formService3: "French ↔ English",
-                formService4: "Legalization",
                 formDocType: "Document type",
                 formDocPlaceholder: "Select...",
                 formDoc1: "Civil status",
-                formDoc2: "Education",
+                formDoc2: "Education / University",
                 formDoc3: "Legal",
                 formDoc4: "Commercial",
                 formDoc5: "Identity",
@@ -1026,8 +1085,8 @@
                 formSubmit: "Send request",
                 formSuccessMsg: "Your message has been sent successfully. We will contact you soon.",
                 footerLogo: "Master Ladj.A",
-                footerLogoSub: "Official Translation",
-                footerDesc: "Sworn translation and document legalization bureau in Dar El Beïda, Algiers. Your trusted partner for all your official translations.",
+                footerLogoSub: "Official & Certified Translation",
+                footerDesc: "Sworn translation bureau accredited by the Ministry of Justice, attached to the Court of Algiers. National and international legal validity of all your official documents.",
                 footerLinks: "Quick Links",
                 footerContact: "Contact",
                 footerLegal: "Legal Notice",
@@ -1038,7 +1097,7 @@
                 legalAgrement: "License:",
                 footerCopyright: "© 2026 Official Translation Bureau Master Ladj.A. All rights reserved.",
                 footerLaw: "Compliant with Law No. 18-07 on data protection",
-                whatsappMsg: "Hello, I would like to request a translation."
+                whatsappMsg: "Hello, I would like to request an official translation."
             },
             ar: {
                 logoTitle: "الأستاذة العاج",
@@ -1047,11 +1106,13 @@
                 navAbout: "من نحن",
                 navServices: "الخدمات",
                 navDocuments: "الوثائق",
+                navInternational: "دولي",
+                navBusiness: "الشركات",
                 navContact: "اتصل بنا",
-                heroBadge: "مترجم محلف معتمد",
-                heroTitle1: "مكتب الترجمة",
-                heroTitle2: "الرسمية - الأستاذة العاج",
-                heroDesc: "شريكك الموثوق للترجمة المحلفة وتصديق الوثائق في الدار البيضاء، الجزائر. دقة وسرية وسرعة مضمونة.",
+                heroBadge: "مترجمة رسمية محلفة",
+                heroTitle1: "مكتب الترجمة الرسمية",
+                heroTitle2: "الأستاذة العاج",
+                heroDesc: "معتمدة من وزارة العدل، تابعة لمحكمة الجزائر. ترجمة معتمدة وختم رسمي لمساعد العدالة المحلف لضمان الصلاحية القانونية المطلقة.",
                 heroCta1: "طلب ترجمة",
                 heroCta2: "واتساب مباشر",
                 stat1: "سنوات من الخبرة",
@@ -1059,66 +1120,79 @@
                 stat3: "لغات العمل",
                 stat4: "السرية التامة",
                 aboutBadge: "من نحن",
-                aboutTitle: "التميز في خدمة ترجماتك الرسمية",
-                aboutDesc1: "مكتب الترجمة الرسمية الأستاذة العاج هو مكتب معتمد يقع في الدار البيضاء، الجزائر. نحن متخصصون في الترجمة المحلفة وتصديق الوثائق للأفراد والشركات والمؤسسات.",
-                aboutDesc2: "التزامنا: دقة مصطلحية صارمة، احترام صارم للمواعيد وسرية مطلقة لوثائقك الحساسة.",
+                aboutTitle: "التميز في خدمة الترجمة الرسمية",
+                aboutDesc1: "مكتب الترجمة الرسمية الأستاذة العاج هو مكتب معتمد يقع في الدار البيضاء، الجزائر. تابع للدائرة القضائية لمحكمة الدار البيضاء، محكمة الجزائر، يتولى المكتب معالجة طلبات الأفراد والشركات والمؤسسات عبر كامل التراب الوطني.",
+                aboutDesc2: "كل ترجمة صادرة تُختم مباشرة بالختم الرسمي لمساعد العدالة المعتمد من وزارة العدل، مما يضمن صلاحيتها القانونية المطلقة لدى الإدارات والهيئات القضائية والتمثيلات الدبلوماسية.",
+                aboutDesc3: "يقوم التزام المكتب على الدقة المصطلحية الصارمة، والاحترام الصارم للآجال، والسرية المطلقة للوثائق المودعة.",
                 value1Title: "معتمد ومحلف",
                 value1Desc: "معترف به من السلطات القضائية",
-                value2Title: "السرعة",
-                value2Desc: "معالجة سريعة متاحة",
-                value3Title: "السرية",
-                value3Desc: "حماية مطلقة للبيانات",
-                value4Title: "الجودة",
-                value4Desc: "مصطلحات قانونية دقيقة",
+                value2Title: "اختصاص موسع",
+                value2Desc: "مقره الدار البيضاء (محكمة الجزائر)، مخول وطنياً",
+                value3Title: "السرعة",
+                value3Desc: "معالجة سريعة متاحة",
+                value4Title: "السرية",
+                value4Desc: "حماية مطلقة للبيانات",
+                value5Title: "الجودة والخبرة",
+                value5Desc: "أكثر من 15 عاماً من الخبرة في المصطلحات القانونية والتجارية والتقنية",
                 aboutExp: "سنوات من الخبرة",
                 servicesBadge: "خدماتنا",
-                servicesTitle: "خدمات الترجمة المهنية",
-                servicesDesc: "نقدم مجموعة كاملة من خدمات الترجمة المحلفة لتلبية جميع احتياجاتك الإدارية والقانونية والتجارية.",
+                servicesTitle: "خدمات الترجمة الرسمية",
+                servicesDesc: "مجموعة من الخدمات الدقيقة لتلبية المتطلبات الإدارية والقانونية والتجارية، مع صلاحية وطنية ودولية فورية.",
                 service1Title: "العربية ↔ الفرنسية",
-                service1Desc: "ترجمة محلفة بين العربية والفرنسية لجميع وثائقك الرسمية والإدارية والقانونية.",
+                service1Desc: "ترجمة رسمية ومعتمدة لجميع الوثائق الإدارية والقانونية ووثائق الحالة المدنية.",
                 service2Title: "العربية ↔ الإنجليزية",
-                service2Desc: "ترجمة معتمدة بين العربية والإنجليزية، مثالية للإجراءات الدولية والدراسة في الخارج.",
+                service2Desc: "ترجمة معتمدة ضرورية للإجراءات الدولية، وملفات الهجرة، والتجارة الخارجية، والدراسة في الخارج.",
                 service3Title: "الفرنسية ↔ الإنجليزية",
-                service3Desc: "ترجمة مهنية بين الفرنسية والإنجليزية للعقود والتقارير والوثائق التجارية.",
-                service4Title: "التصديق",
-                service4Desc: "تصديق واعتماد الوثائق للصلاحية الرسمية لدى الإدارات والسفارات.",
+                service3Desc: "ترجمة مهنية وتقنية مناسبة للعقود التجارية، والتقارير المالية، والأنظمة الأساسية، والصفقات العمومية.",
                 docsBadge: "أنواع الوثائق",
-                docsTitle: "الوثائق التي نترجمها",
-                docsDesc: "نتولى ترجمة جميع أنواع الوثائق الرسمية والإدارية.",
+                docsTitle: "الوثائق المعالجة",
+                docsDesc: "معالجة شاملة واعتماد رسمي بختم العدالة لمجموعة واسعة من الوثائق.",
                 doc1Title: "الحالة المدنية",
-                doc1Desc: "شهادات الميلاد، الزواج، الوفاة، شهادات الإقامة.",
-                doc2Title: "التعليم",
-                doc2Desc: "الشهادات، كشوف النقاط، شهادات الدراسة.",
-                doc3Title: "قانوني",
-                doc3Desc: "العقود، الأحكام، الوكالات، الأنظمة الأساسية للشركات.",
-                doc4Title: "تجاري",
-                doc4Desc: "الفواتير، الميزانيات، السجلات التجارية، طلبات العروض.",
-                doc5Title: "الهوية",
-                doc5Desc: "جوازات السفر، بطاقات الهوية، رخص القيادة، السوابق القضائية.",
+                doc1Desc: "شهادات الميلاد، الزواج، الوفاة، دفاتر العائلة، شهادات الإقامة.",
+                doc2Title: "التعليم والجامعة",
+                doc2Desc: "الشهادات، كشوف النقاط، شهادات النجاح، شهادات التمدرس.",
+                doc3Title: "قانوني وقضائي",
+                doc3Desc: "الأحكام، العقود، الوكالات، الأنظمة الأساسية للشركات، السوابق القضائية.",
+                doc4Title: "تجاري والجمارك",
+                doc4Desc: "الفواتير التجارية، البيانات المحاسبية، السجلات التجارية، طلبات العروض.",
+                doc5Title: "الهوية والسفر",
+                doc5Desc: "جوازات السفر، بطاقات الهوية الوطنية، رخص القيادة.",
                 doc6Title: "الصفقات العمومية",
-                doc6Desc: "ملفات التقديم، الشهادات، الوثائق الإدارية.",
+                doc6Desc: "دفاتر الشروط، ملفات التقديم، شهادات التأهيل.",
+                noteTitle: "ملاحظة هامة",
+                noteDesc: "وفقاً للتنظيم الذي يحكم المهنة في الجزائر، لا يقوم المكتب بأي تصديق لوثائق pihak ثالث. فقط الوثائق المترجمة والمعالجة داخل المكتب تُختم بالختم الرسمي وتوقيع مساعد العدالة المحلف.",
+                intlBadge: "دولي",
+                intlTitle: "الإجراءات الدولية، التأشيرات والدراسة في الخارج",
+                intlDesc1: "سواء كان الأمر يتعلق بمشروع دراسة (Campus France، الجامعات الناطقة بالإنجليزية)، أو إجراء هجرة (كندا، أوروبا، الخليج)، أو طلب تأشيرة، فإن مطابقة الوثائق عامل حاسم.",
+                intlDesc2: "يضمن المكتب الترجمة المعتمدة لجميع الملفات المطلوبة (الشهادات، كشوف النقاط، شهادات العمل، قسائم الراتب، وثائق الحالة المدنية) بما يتوافق تماماً مع متطلبات السفارات والمنظمات الدولية. كل ترجمة صادرة جاهزة لتقديمها مباشرة للسلطات القنصلية.",
+                intlItem1: "الدراسة في الخارج",
+                intlItem2: "الهجرة",
+                intlItem3: "طلبات التأشيرة",
+                intlItem4: "لم شمل الأسرة",
+                bizBadge: "الشركات والمهنيين",
+                bizTitle: "حلول الترجمة للشركات والمؤسسات الصغيرة والمتوسطة",
+                bizDesc1: "بالنسبة للمشغلين الاقتصاديين والمستوردين ومكاتب المحاماة، فإن دقة المصطلحات مسألة أمن قانوني. يقدم المكتب مرافقة مخصصة للترجمة المعتمدة للوثائق المؤسسية: الأنظمة الأساسية للشركات، السجلات التجارية، البيانات المحاسبية، عقود الشراكة، ملفات التقديم للصفقات العمومية وطلبات العروض الدولية.",
+                bizDesc2: "تم تحسين معالجة الأحجام الكبيرة لضمان احترام جداول الأعمال، تحت ختم السرية الصارمة.",
+                bizItem1: "الأنظمة الأساسية للشركات",
+                bizItem2: "عقود الشراكة",
+                bizItem3: "البيانات المحاسبية",
+                bizItem4: "طلبات العروض",
                 testiBadge: "الشهادات",
                 testiTitle: "ماذا يقول عملاؤنا",
-                testi1Text: "خدمة استثنائية! تمت ترجمة شهاداتي في أقل من 24 ساعة بجودة لا تشوبها شائبة. أوصي بشدة لجميع الإجراءات الجامعية في الخارج.",
-                testi1Name: "فاطمة ب.",
-                testi1Role: "طالبة - ماجستير في كندا",
-                testi2Text: "كمحامٍ، أطلب دقة مصطلحية مطلقة. الأستاذة العاج تقدم عملاً دقيقاً وموثوقاً لجميع ملفاتنا القانونية الدولية.",
-                testi2Name: "الأستاذ بن علي ك.",
-                testi2Role: "محامٍ - القانون الدولي",
-                testi3Text: "شريك موثوق لمؤسستنا. إدارة فعالة للأحجام الكبيرة من العقود التجارية. السرية والمهنية في الموعد.",
-                testi3Name: "كريم م.",
-                testi3Role: "صاحب مؤسسة - استيراد/تصدير",
+                testi1Text: "« شريك موثوق لمؤسستنا. إدارة فعالة للأحجام الكبيرة من العقود التجارية. السرية والدقة القانونية والمهنية في الموعد. »",
+                testi1Name: "كريم م.",
+                testi1Role: "صاحب مؤسسة - استيراد/تصدير",
                 contactBadge: "اتصل بنا",
-                contactTitle: "تواصل معنا",
-                contactDesc: "تحتاج إلى ترجمة؟ املأ النموذج أو اتصل بنا مباشرة عبر واتساب.",
+                contactTitle: "الاتصال وطلب عرض سعر",
+                contactDesc: "لأي طلب ترجمة رسمية، النموذج أدناه متاح. خط واتساب مباشر متاح أيضاً للمساعدة السريعة.",
                 contactAddressTitle: "العنوان",
                 contactAddress: "رقم 14، حي القائد سي لخضر (النفخة سابقاً، جزيرة ب)، الدار البيضاء 16033، الجزائر",
                 contactPhoneTitle: "الهاتف",
                 contactHoursTitle: "ساعات العمل",
-                contactHours: "السبت - الخميس: 08:30 - 16:30",
+                contactHours: "السبت – الخميس: 08:30 – 16:30",
                 contactClosed: "الجمعة: مغلق",
                 contactWhatsappTitle: "واتساب مباشر",
-                contactWhatsappDesc: "استجابة سريعة مضمونة",
+                contactWhatsappDesc: "اتصال سريع لدراسة الوثائق",
                 formName: "الاسم الكامل *",
                 formPhone: "الهاتف *",
                 formEmail: "البريد الإلكتروني *",
@@ -1127,11 +1201,10 @@
                 formService1: "العربية ↔ الفرنسية",
                 formService2: "العربية ↔ الإنجليزية",
                 formService3: "الفرنسية ↔ الإنجليزية",
-                formService4: "التصديق",
                 formDocType: "نوع الوثيقة",
                 formDocPlaceholder: "اختر...",
                 formDoc1: "الحالة المدنية",
-                formDoc2: "التعليم",
+                formDoc2: "التعليم / الجامعة",
                 formDoc3: "قانوني",
                 formDoc4: "تجاري",
                 formDoc5: "الهوية",
@@ -1141,8 +1214,8 @@
                 formSubmit: "إرسال الطلب",
                 formSuccessMsg: "تم إرسال رسالتك بنجاح. سنتواصل معك قريباً.",
                 footerLogo: "الأستاذة العاج",
-                footerLogoSub: "الترجمة الرسمية",
-                footerDesc: "مكتب الترجمة المحلفة وتصديق الوثائق في الدار البيضاء، الجزائر. شريكك الموثوق لجميع ترجماتك الرسمية.",
+                footerLogoSub: "الترجمة الرسمية والمعتمدة",
+                footerDesc: "مكتب ترجمة محلفة معتمد من وزارة العدل، تابع لمحكمة الجزائر. صلاحية قانونية وطنية ودولية لجميع وثائقك الرسمية.",
                 footerLinks: "روابط سريعة",
                 footerContact: "اتصل بنا",
                 footerLegal: "إشعار قانوني",
@@ -1153,7 +1226,7 @@
                 legalAgrement: "الاعتماد:",
                 footerCopyright: "© 2026 مكتب الترجمة الرسمية الأستاذة العاج. جميع الحقوق محفوظة.",
                 footerLaw: "متوافق مع القانون رقم 18-07 المتعلق بحماية البيانات",
-                whatsappMsg: "مرحباً، أود طلب ترجمة."
+                whatsappMsg: "مرحباً، أود طلب ترجمة رسمية."
             }
         };
 
@@ -1163,11 +1236,9 @@
             currentLang = lang;
             const dict = translations[lang];
             
-            // Update HTML dir and lang
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
             
-            // Update all text elements
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (dict[key]) {
@@ -1175,7 +1246,6 @@
                 }
             });
             
-            // Update language buttons
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 if (btn.dataset.lang === lang) {
                     btn.className = 'lang-btn px-3 py-1 text-xs font-semibold rounded-full transition-all bg-white text-primary-500 shadow-sm';
@@ -1184,12 +1254,10 @@
                 }
             });
             
-            // Update WhatsApp link message
             const waBtn = document.getElementById('whatsappBtn');
             const msg = encodeURIComponent(dict.whatsappMsg);
             waBtn.href = `https://wa.me/213550930083?text=${msg}`;
             
-            // Adjust WhatsApp button position for RTL
             if (lang === 'ar') {
                 waBtn.classList.remove('right-6');
                 waBtn.classList.add('left-6');
@@ -1202,7 +1270,6 @@
                 document.getElementById('scrollTopBtn').classList.add('left-6');
             }
             
-            // Update form options
             const serviceSelect = document.querySelector('select[name="service"]');
             const docSelect = document.querySelector('select[name="docType"]');
             if (serviceSelect) {
@@ -1219,18 +1286,15 @@
             }
         }
 
-        // Carousel Logic
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dot');
         
         function goToSlide(index) {
             slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
             dots[currentSlide].style.backgroundColor = 'rgba(255,255,255,0.4)';
             currentSlide = index;
             slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
             dots[currentSlide].style.backgroundColor = '#fbbf24';
         }
         
@@ -1242,43 +1306,8 @@
             goToSlide((currentSlide + 1) % slides.length);
         }, 5000);
         
-        // Initialize first dot
-        if (dots[0]) {
-            dots[0].classList.add('active');
-            dots[0].style.backgroundColor = '#fbbf24';
-        }
+        if (dots[0]) dots[0].style.backgroundColor = '#fbbf24';
 
-        // Testimonials Carousel
-        let currentTesti = 0;
-        const testiSlides = document.querySelectorAll('.testimonial-slide');
-        const testiDots = document.querySelectorAll('.testi-dot');
-        
-        function goToTesti(index) {
-            testiSlides[currentTesti].classList.add('hidden');
-            testiSlides[currentTesti].classList.remove('active');
-            testiDots[currentTesti].classList.remove('active');
-            testiDots[currentTesti].style.backgroundColor = 'rgba(255,255,255,0.4)';
-            currentTesti = index;
-            testiSlides[currentTesti].classList.remove('hidden');
-            testiSlides[currentTesti].classList.add('active');
-            testiDots[currentTesti].classList.add('active');
-            testiDots[currentTesti].style.backgroundColor = '#fbbf24';
-        }
-        
-        testiDots.forEach((dot, idx) => {
-            dot.addEventListener('click', () => goToTesti(idx));
-        });
-        
-        setInterval(() => {
-            goToTesti((currentTesti + 1) % testiSlides.length);
-        }, 6000);
-        
-        if (testiDots[0]) {
-            testiDots[0].classList.add('active');
-            testiDots[0].style.backgroundColor = '#fbbf24';
-        }
-
-        // Intersection Observer for animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1289,21 +1318,18 @@
         
         document.querySelectorAll('.fade-in-up, .fade-in').forEach(el => observer.observe(el));
 
-        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
         
-        // Close mobile menu on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
 
-        // Header scroll effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -1313,7 +1339,6 @@
             }
         });
 
-        // Scroll to top button
         const scrollTopBtn = document.getElementById('scrollTopBtn');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 500) {
@@ -1329,16 +1354,13 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Form submission
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Check honeypot
             const gotcha = contactForm.querySelector('[name="_gotcha"]').value;
             if (gotcha) return;
             
-            // Simulate submission
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<span class="animate-pulse">Sending...</span>';
@@ -1356,10 +1378,7 @@
             }, 1500);
         });
 
-        // Initialize Lucide icons
         lucide.createIcons();
-        
-        // Initialize language
         setLanguage('fr');
     </script>
 </body>
