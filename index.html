@@ -62,7 +62,34 @@
       "priceRange": "DZD",
       "areaServed": { "@type": "Country", "name": "Algérie" },
       "knowsLanguage": ["ar", "fr", "en"],
-      "hasCredential": "Agrément Ministère de la Justice — Cour d'Alger"
+      "hasCredential": "Agrément Ministère de la Justice — Cour d'Alger",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "10",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Abdelkrim Hammaoui" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "J'ai fait appel aux services de Maître LADJ pour la traduction d'un document officiel en français. Travail professionnel et respect des délais. Je la recommande vivement."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Imen Rahal" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Cliente depuis des années, je peux attester que vous aurez la garantie d'une traduction impeccable avec respect strict des délais. Excellent travail et professionnalisme assurés."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Hocine Amrane" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Un bon accueil, une femme de parole et sérieuse avec un bon travail professionnel. Elle est à la hauteur de sa réputation."
+        }
+      ]
     }
     </script>
 
@@ -97,6 +124,7 @@
         --wrap:1180px;
         --r:14px;
         --shadow:0 24px 60px -28px rgba(27,26,23,.35);
+        --ease:cubic-bezier(.16,1,.3,1);
     }
 
     /* ===================== BASE ===================== */
@@ -164,9 +192,10 @@
 
     .menu{display:flex;gap:1.45rem;align-items:center}
     .menu a{font-size:.84rem;color:var(--ink-2);position:relative;padding:4px 0;transition:color .2s;white-space:nowrap}
-    .menu a::after{content:"";position:absolute;inset-inline-start:0;bottom:-2px;width:0;height:1.5px;background:var(--sceau);transition:width .25s}
+    .menu a::after{content:"";position:absolute;inset-inline:0;bottom:-2px;block-size:1.5px;background:var(--sceau);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
+    html[dir="rtl"] .menu a::after{transform-origin:right}
     .menu a:hover{color:var(--sceau)}
-    .menu a:hover::after{width:100%}
+    .menu a:hover::after{transform:scaleX(1)}
 
     .nav-right{display:flex;align-items:center;gap:.85rem}
     .lang{display:inline-flex;border:1px solid var(--line-strong);border-radius:999px;overflow:hidden;background:var(--white)}
@@ -339,6 +368,30 @@
     .map-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:20px}
     @media(max-width:760px){.map-wrap iframe{height:280px}}
 
+    /* ===================== TÉMOIGNAGES ===================== */
+    .testi{background:var(--paper-2);border-block:1px solid var(--line);overflow:hidden}
+    .testi-head{display:flex;flex-direction:column;align-items:center;text-align:center}
+    .testi-rating{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;justify-content:center;font-family:var(--font-mono);font-size:.8rem;color:var(--muted)}
+    html[dir="rtl"] .testi-rating{font-family:var(--font-ar-body)}
+    .stars{color:#E1A100;letter-spacing:2px;line-height:1}
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+    @media(max-width:900px){.testi-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.testi-grid{grid-template-columns:1fr}}
+    .tcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:15px;box-shadow:var(--shadow)}
+    html[dir="rtl"] .tcard{direction:ltr;text-align:left}
+    .tcard .stars{font-size:1.05rem}
+    .tcard blockquote{margin:0;font-family:var(--font-body);font-size:.97rem;line-height:1.6;color:var(--ink-2)}
+    .tcard .who{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
+    .tcard .avatar{width:42px;height:42px;border-radius:999px;background:var(--sceau);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.15rem;flex-shrink:0}
+    .tcard .nm{font-family:var(--font-body);font-weight:600;color:var(--ink);font-size:.92rem}
+    .tcard .mt{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.04em;color:var(--muted)}
+    .trust-badge{display:inline-flex;align-items:center;gap:.55rem;border:1px solid var(--line-strong);background:var(--white);border-radius:999px;padding:9px 16px;font-size:.86rem;color:var(--ink-2);box-shadow:0 10px 24px -16px rgba(27,26,23,.5);transition:.2s}
+    .trust-badge:hover{border-color:var(--sceau);transform:translateY(-1px)}
+    .trust-badge .stars{font-size:.95rem}
+    .trust-badge svg{width:16px;height:16px;flex-shrink:0}
+    .hero .trust-badge{margin-top:22px}
+    html[dir="rtl"] .trust-badge{font-family:var(--font-ar-body)}
+
     /* ===================== FOOTER ===================== */
     footer{background:var(--ink);color:rgba(244,241,233,.7);padding:56px 0 40px}
     .foot-top{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:32px}
@@ -358,13 +411,38 @@
     .to-top{position:fixed;inset-block-end:max(20px,env(safe-area-inset-bottom));inset-inline-start:20px;z-index:90;width:46px;height:46px;border-radius:999px;background:var(--ink);color:#fff;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .3s, transform .3s}
     .to-top.show{opacity:1;transform:translateY(0)}
 
-    /* ===================== REVEAL ===================== */
-    .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s ease}
-    .reveal.in{opacity:1;transform:none}
+    /* ===================== MOTION ===================== */
+    .reveal{transition:opacity .7s var(--ease), transform .7s var(--ease)}
+    .stagger > *{transition:opacity .55s var(--ease), transform .55s var(--ease)}
+    .num .cv{font-variant-numeric:tabular-nums}
+
+    @media (prefers-reduced-motion: no-preference){
+        html.js .reveal{opacity:0;transform:translateY(26px)}
+        html.js .reveal.in{opacity:1;transform:none}
+        html.js .stagger > *{opacity:0;transform:translateY(22px)}
+        html.js .stagger.in > *{opacity:1;transform:none}
+        .stagger.in > *:nth-child(1){transition-delay:.04s}
+        .stagger.in > *:nth-child(2){transition-delay:.10s}
+        .stagger.in > *:nth-child(3){transition-delay:.16s}
+        .stagger.in > *:nth-child(4){transition-delay:.22s}
+        .stagger.in > *:nth-child(5){transition-delay:.28s}
+        .stagger.in > *:nth-child(6){transition-delay:.34s}
+        .stagger.in > *:nth-child(7){transition-delay:.40s}
+        .stagger.in > *:nth-child(8){transition-delay:.46s}
+        /* Hero : cascade + entrée « tampon » du sceau */
+        .hero-copy > *{opacity:0;animation:riseIn .7s var(--ease) both}
+        .hero-copy > *:nth-child(1){animation-delay:.08s}
+        .hero-copy > *:nth-child(2){animation-delay:.16s}
+        .hero-copy > *:nth-child(3){animation-delay:.26s}
+        .hero-copy > *:nth-child(4){animation-delay:.36s}
+        .hero-copy > *:nth-child(5){animation-delay:.46s}
+        .hero-seal .seal-img{opacity:0;animation:sealStamp 1s var(--ease) .12s both}
+    }
+    @keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    @keyframes sealStamp{0%{opacity:0;transform:scale(1.06);filter:blur(7px)}55%{opacity:1}100%{opacity:1;transform:scale(1);filter:blur(0)}}
 
     @media(prefers-reduced-motion:reduce){
         *{animation:none !important;transition:none !important}
-        .reveal{opacity:1;transform:none}
         html{scroll-behavior:auto}
     }
 
@@ -407,6 +485,7 @@
                 <a href="#international" data-i18n="navInternational">International</a>
                 <a href="#entreprises" data-i18n="navBusiness">Entreprises</a>
                 <a href="#faq" data-i18n="navFaq">FAQ</a>
+                <a href="#temoignages" data-i18n="navTestimonials">Avis</a>
                 <a href="#contact" data-i18n="navContact">Contact</a>
             </nav>
 
@@ -431,6 +510,7 @@
         <a href="#entreprises" data-i18n="navBusiness">Entreprises</a>
         <a href="#deontologie" data-i18n="navDeonto">Déontologie</a>
         <a href="#faq" data-i18n="navFaq">FAQ</a>
+        <a href="#temoignages" data-i18n="navTestimonials">Avis</a>
         <a href="#contact" data-i18n="navContact">Contact</a>
     </div>
 </header>
@@ -440,7 +520,7 @@
     <section class="hero" id="accueil">
         <div class="wrap">
             <div class="hero-grid">
-                <div class="reveal">
+                <div class="hero-copy">
                     <span class="eyebrow" data-i18n="heroEyebrow">Traductrice Officielle Assermentée — Auxiliaire de Justice</span>
                     <h1><span data-i18n="heroTitle1">La traduction officielle</span> <span class="accent" data-i18n="heroTitle2">sous sceau juridictionnel.</span></h1>
                     <p class="hero-lead" data-i18n="heroLead">Traductions certifiées en arabe, français et anglais, axées sur la reconnaissance institutionnelle. Chaque acte, revêtu du sceau d'auxiliaire de justice, acquiert une validité immédiate auprès des institutions juridiques et diplomatiques, en Algérie comme à l'étranger.</p>
@@ -448,8 +528,9 @@
                         <a href="#contact" class="btn btn-primary"><span data-i18n="heroCta1">Initier une démarche</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
                         <a href="https://wa.me/213550930083" target="_blank" rel="noopener noreferrer" class="btn btn-ghost"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg><span data-i18n="heroCta2">Assistance WhatsApp</span></a>
                     </div>
+                    <a href="https://maps.app.goo.gl/HgMQM6MXMJzqZ7pa9" target="_blank" rel="noopener noreferrer" class="trust-badge" aria-label="Note Google 5 sur 5, 10 avis"><span class="stars" aria-hidden="true">★★★★★</span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg><span data-i18n="trustReviews">5,0 · 10 avis Google</span></a>
                 </div>
-                <div class="hero-seal reveal">
+                <div class="hero-seal">
                     <!-- SIGNATURE : cachet officiel réel -->
                     <img class="seal-img" src="sceau.png" alt="Sceau officiel — Maître Ladj Amina, traductrice assermentée près le Tribunal de Dar El Beïda, agréée par le Ministère de la Justice, Alger">
                 </div>
@@ -460,11 +541,11 @@
     <!-- ===== STATS ===== -->
     <section class="stats" aria-label="Chiffres clés">
         <div class="wrap">
-            <div class="grid">
-                <div class="stat reveal"><div class="num">2009</div><div class="label" data-i18n="stat1">Année d'établissement</div></div>
-                <div class="stat reveal"><div class="num">15k<b>+</b></div><div class="label" data-i18n="stat2">Pages certifiées</div></div>
-                <div class="stat reveal"><div class="num">3</div><div class="label" data-i18n="stat3">Langues officielles</div></div>
-                <div class="stat reveal"><div class="num">100<b>%</b></div><div class="label" data-i18n="stat4">Secret professionnel</div></div>
+            <div class="grid stagger">
+                <div class="stat"><div class="num"><span class="cv" data-to="2009">2009</span></div><div class="label" data-i18n="stat1">Année d'établissement</div></div>
+                <div class="stat"><div class="num"><span class="cv" data-to="15">15</span>k<b>+</b></div><div class="label" data-i18n="stat2">Pages certifiées</div></div>
+                <div class="stat"><div class="num"><span class="cv" data-to="3">3</span></div><div class="label" data-i18n="stat3">Langues officielles</div></div>
+                <div class="stat"><div class="num"><span class="cv" data-to="100">100</span><b>%</b></div><div class="label" data-i18n="stat4">Secret professionnel</div></div>
             </div>
         </div>
     </section>
@@ -495,11 +576,11 @@
                 <span class="eyebrow" data-i18n="processEyebrow">Protocole réglementaire</span>
                 <h2 class="section-title" style="max-width:26ch" data-i18n="processTitle">Une procédure rigoureuse, gage de conformité légale.</h2>
             </div>
-            <div class="steps">
-                <div class="step reveal"><span class="no">01</span><h3 data-i18n="step1Title">Transmission ou dépôt</h3><p data-i18n="step1Desc">Dépôt des documents au cabinet. Pour les entreprises, une pré-analyse peut être effectuée par voie électronique.</p></div>
-                <div class="step reveal"><span class="no">02</span><h3 data-i18n="step2Title">Traduction et expertise</h3><p data-i18n="step2Desc">Traduction fidèle de l'acte par la traductrice assermentée, garantissant l'exactitude des termes juridiques et techniques.</p></div>
-                <div class="step reveal"><span class="no">03</span><h3 data-i18n="step3Title">Sceau et authentification</h3><p data-i18n="step3Desc">Apposition du sceau officiel et de la signature de l'auxiliaire de justice sur chaque document traduit.</p></div>
-                <div class="step reveal"><span class="no">04</span><h3 data-i18n="step4Title">Retrait sur présentation des originaux</h3><p data-i18n="step4Desc">Retrait exclusif au cabinet. La délivrance de la traduction officielle est conditionnée par la présentation des pièces originales.</p></div>
+            <div class="steps stagger">
+                <div class="step"><span class="no">01</span><h3 data-i18n="step1Title">Transmission ou dépôt</h3><p data-i18n="step1Desc">Dépôt des documents au cabinet. Pour les entreprises, une pré-analyse peut être effectuée par voie électronique.</p></div>
+                <div class="step"><span class="no">02</span><h3 data-i18n="step2Title">Traduction et expertise</h3><p data-i18n="step2Desc">Traduction fidèle de l'acte par la traductrice assermentée, garantissant l'exactitude des termes juridiques et techniques.</p></div>
+                <div class="step"><span class="no">03</span><h3 data-i18n="step3Title">Sceau et authentification</h3><p data-i18n="step3Desc">Apposition du sceau officiel et de la signature de l'auxiliaire de justice sur chaque document traduit.</p></div>
+                <div class="step"><span class="no">04</span><h3 data-i18n="step4Title">Retrait sur présentation des originaux</h3><p data-i18n="step4Desc">Retrait exclusif au cabinet. La délivrance de la traduction officielle est conditionnée par la présentation des pièces originales.</p></div>
             </div>
         </div>
     </section>
@@ -516,18 +597,18 @@
                 <div class="lng"><div class="code">Français</div><div class="name" data-i18n="langFr">Langue Française</div></div>
                 <div class="lng"><div class="code">English</div><div class="name" data-i18n="langEn">Langue Anglaise</div></div>
             </div>
-            <div class="cards">
-                <div class="card reveal">
+            <div class="cards stagger">
+                <div class="card">
                     <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></div>
                     <h3 data-i18n="svc1">Traduction Certifiée Conforme</h3>
                     <p data-i18n="svc1Desc">Actes revêtus du sceau officiel, certifiés conformes à l'original et opposables devant toutes les administrations publiques et privées.</p>
                 </div>
-                <div class="card reveal">
+                <div class="card">
                     <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg></div>
                     <h3 data-i18n="svc2">Actes Juridiques & Judiciaires</h3>
                     <p data-i18n="svc2Desc">Traduction rigoureuse de jugements, contrats commerciaux, statuts de sociétés et actes notariés avec une maîtrise terminologique parfaite.</p>
                 </div>
-                <div class="card reveal">
+                <div class="card">
                     <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
                     <h3 data-i18n="svc3">Traitement Haute Performance</h3>
                     <p data-i18n="svc3Desc">Prise en charge optimisée alliant rapidité d'exécution et excellence technique, dans le strict respect de vos échéances.</p>
@@ -543,7 +624,7 @@
                 <span class="eyebrow" data-i18n="docsEyebrow">Actes pris en charge</span>
                 <h2 class="section-title" style="max-width:26ch" data-i18n="docsTitle">Nomenclature des documents certifiés.</h2>
             </div>
-            <div class="doc-grid reveal">
+            <div class="doc-grid stagger">
                 <div class="doc"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-8 0v2"/><circle cx="12" cy="7" r="4"/></svg><span data-i18n="doc1">Actes d'État Civil</span></h3><p data-i18n="doc1Desc">Actes de naissance, de mariage, de décès, livrets de famille et fiches individuelles.</p></div>
                 <div class="doc"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 3 2 6 2s6-1 6-2v-5"/></svg><span data-i18n="doc2">Certificats Académiques</span></h3><p data-i18n="doc2Desc">Diplômes d'État, relevés de notes universitaires, attestations de scolarité et de réussite.</p></div>
                 <div class="doc"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg><span data-i18n="doc3">Actes Notariés et Judiciaires</span></h3><p data-i18n="doc3Desc">Arrêts de cour, jugements, procurations officielles, statuts et actes de cession.</p></div>
@@ -575,10 +656,10 @@
                 <h2 class="section-title" style="max-width:28ch" data-i18n="businessTitle">Expertise dédiée aux personnes morales et institutions.</h2>
                 <p class="lead" data-i18n="businessDesc">Accompagnement rigoureux des entreprises dans leurs transactions internationales : traduction de documents statutaires, financiers et contractuels avec une garantie d'excellence technique.</p>
             </div>
-            <div class="biz-grid" style="margin-top:48px">
-                <div class="card reveal"><h3 data-i18n="business1">Contrats & Protocoles d'Accord</h3><p data-i18n="business1Desc">Traduction à haute valeur juridique de contrats commerciaux internationaux, pactes d'associés et accords de confidentialité.</p></div>
-                <div class="card reveal"><h3 data-i18n="business2">États Financiers & Audits</h3><p data-i18n="business2Desc">Traduction certifiée de bilans comptables, rapports d'audits et documents fiscaux pour filiales et partenaires étrangers.</p></div>
-                <div class="card reveal"><h3 data-i18n="business3">Dossiers de Soumission & Appels d'Offres</h3><p data-i18n="business3Desc">Traduction technique et juridique de cahiers des charges complexes et de dossiers de soumission internationaux.</p></div>
+            <div class="biz-grid stagger" style="margin-top:48px">
+                <div class="card"><h3 data-i18n="business1">Contrats & Protocoles d'Accord</h3><p data-i18n="business1Desc">Traduction à haute valeur juridique de contrats commerciaux internationaux, pactes d'associés et accords de confidentialité.</p></div>
+                <div class="card"><h3 data-i18n="business2">États Financiers & Audits</h3><p data-i18n="business2Desc">Traduction certifiée de bilans comptables, rapports d'audits et documents fiscaux pour filiales et partenaires étrangers.</p></div>
+                <div class="card"><h3 data-i18n="business3">Dossiers de Soumission & Appels d'Offres</h3><p data-i18n="business3Desc">Traduction technique et juridique de cahiers des charges complexes et de dossiers de soumission internationaux.</p></div>
             </div>
         </div>
     </section>
@@ -591,23 +672,23 @@
                 <h2 class="section-title" style="max-width:28ch" data-i18n="deontoTitle">Le secret professionnel au cœur de l'acte juridictionnel.</h2>
                 <p class="lead" data-i18n="deontoDesc">En sa qualité d'auxiliaire de justice, Maître Ladj.A est soumise aux règles déontologiques les plus strictes. Le cabinet garantit une sécurité absolue dans le traitement de vos données et documents officiels.</p>
             </div>
-            <div class="deonto-grid">
-                <div class="card reveal">
+            <div class="deonto-grid stagger">
+                <div class="card">
                     <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
                     <h3 data-i18n="deonto1">Secret Professionnel Absolu</h3>
                     <p data-i18n="deonto1Desc">Confidentialité totale et opposable concernant les pièces d'état civil, les dossiers d'immigration et l'ensemble des données d'entreprise.</p>
                 </div>
-                <div class="card reveal">
+                <div class="card">
                     <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></svg></div>
                     <h3 data-i18n="deonto2">Rigueur et Fidélité Légale</h3>
                     <p data-i18n="deonto2Desc">Traduction d'une exactitude absolue, exempte de toute interprétation personnelle, respectant la lettre et l'esprit de l'acte juridique original.</p>
                 </div>
-                <div class="card reveal">
+                <div class="card">
                     <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M5 7h14"/></svg></div>
                     <h3 data-i18n="deonto3">Responsabilité Civile et Statutaire</h3>
                     <p data-i18n="deonto3Desc">Chaque signature et apposition de sceau engage la responsabilité civile et professionnelle du traducteur officiel devant les autorités judiciaires.</p>
                 </div>
-                <div class="card reveal">
+                <div class="card">
                     <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
                     <h3 data-i18n="deonto4">Protection des Données (Loi 18-07)</h3>
                     <p data-i18n="deonto4Desc">Traitement sécurisé des informations conformément à la Loi n° 18-07 relative à la protection des personnes physiques dans le traitement des données à caractère personnel.</p>
@@ -623,12 +704,38 @@
                 <span class="eyebrow" data-i18n="faqEyebrow">Dispositions Légales</span>
                 <h2 class="section-title" style="max-width:24ch" data-i18n="faqTitle">Réponses réglementaires aux questions fréquentes.</h2>
             </div>
-            <div class="faq-list reveal">
+            <div class="faq-list stagger">
                 <details><summary><span data-i18n="faq1q">Quelle est la procédure de dépôt des documents ?</span><span class="pm" aria-hidden="true"></span></summary><div class="faq-a" data-i18n="faq1a">Le dépôt s'effectue directement au cabinet. Pour les structures corporatives, une transmission préalable par voie électronique est acceptée pour étude.</div></details>
                 <details><summary><span data-i18n="faq2q">Quels sont les délais réglementaires d'exécution ?</span><span class="pm" aria-hidden="true"></span></summary><div class="faq-a" data-i18n="faq2a">Les délais varient selon le volume de l'acte. Le cabinet est reconnu pour sa célérité opérationnelle, garantissant une exécution rapide sans compromis sur l'excellence.</div></details>
                 <details><summary><span data-i18n="faq3q">La présence des documents originaux est-elle impérative ?</span><span class="pm" aria-hidden="true"></span></summary><div class="faq-a" data-i18n="faq3a">Oui. En conformité avec la législation, la délivrance et le retrait de la traduction officielle sont strictement conditionnés par la vérification physique des documents originaux.</div></details>
                 <details><summary><span data-i18n="faq4q">Où s'effectue la livraison des documents traduits ?</span><span class="pm" aria-hidden="true"></span></summary><div class="faq-a" data-i18n="faq4a">Le retrait des actes officiels s'effectue exclusivement au cabinet à Dar El Beïda, après authentification.</div></details>
                 <details><summary><span data-i18n="faq5q">Quelles sont les combinaisons linguistiques agréées ?</span><span class="pm" aria-hidden="true"></span></summary><div class="faq-a" data-i18n="faq5a">Le cabinet assure officiellement les traductions croisées entre les langues arabe, française et anglaise.</div></details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TÉMOIGNAGES ===== -->
+    <section class="section testi" id="temoignages">
+        <div class="wrap">
+            <div class="testi-head reveal">
+                <span class="eyebrow" data-i18n="testiEyebrow">Avis vérifiés sur Google</span>
+                <h2 class="section-title" style="max-width:24ch;text-align:center" data-i18n="testiTitle">La confiance de nos clients, en toutes lettres.</h2>
+                <div class="testi-rating">
+                    <span class="stars" aria-hidden="true">★★★★★</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg>
+                    <span data-i18n="testiNote">Avis réels et vérifiables sur Google</span>
+                </div>
+            </div>
+            <div class="testi-grid stagger">
+                <figure class="tcard"><div class="stars" aria-label="Note 5 sur 5">★★★★★</div><blockquote>« J'ai fait appel aux services de Maître LADJ pour la traduction d'un document officiel en français. Travail professionnel et respect des délais. Je la recommande vivement. »</blockquote><figcaption class="who"><span class="avatar" aria-hidden="true">A</span><span><span class="nm">Abdelkrim Hammaoui</span><br><span class="mt">Local Guide · 63 avis</span></span></figcaption></figure>
+                <figure class="tcard"><div class="stars" aria-label="Note 5 sur 5">★★★★★</div><blockquote>« Je recommande maître Ladj, j'ai fait la traduction de document tel que permis de conduire. Très professionnel et à l'écoute. Merci. »</blockquote><figcaption class="who"><span class="avatar" aria-hidden="true">Y</span><span><span class="nm">Yamann Colas</span><br><span class="mt">Local Guide · 99 avis</span></span></figcaption></figure>
+                <figure class="tcard"><div class="stars" aria-label="Note 5 sur 5">★★★★★</div><blockquote>« Un bon accueil, une femme de parole et sérieuse, avec un bon travail professionnel. Elle est à la hauteur de sa réputation. Je vous la recommande vivement pour toute traduction. »</blockquote><figcaption class="who"><span class="avatar" aria-hidden="true">H</span><span><span class="nm">Hocine Amrane</span><br><span class="mt">Local Guide · 220 avis</span></span></figcaption></figure>
+                <figure class="tcard"><div class="stars" aria-label="Note 5 sur 5">★★★★★</div><blockquote>« Cliente depuis des années, je peux attester que vous aurez la garantie d'une traduction impeccable avec respect strict des délais. Excellent travail et professionnalisme assurés. Merci et très bonne continuation. »</blockquote><figcaption class="who"><span class="avatar" aria-hidden="true">I</span><span><span class="nm">Imen Rahal</span><br><span class="mt">Local Guide · 30 avis</span></span></figcaption></figure>
+                <figure class="tcard"><div class="stars" aria-label="Note 5 sur 5">★★★★★</div><blockquote>« Personne sérieuse et très méticuleuse, qui fait de l'excellent travail avec toujours un respect du délai. Je recommande fortement son bureau pour toute traduction arabe, français et anglais. »</blockquote><figcaption class="who"><span class="avatar" aria-hidden="true">N</span><span><span class="nm">Nessma Helal</span><br><span class="mt">Avis Google</span></span></figcaption></figure>
+                <figure class="tcard"><div class="stars" aria-label="Note 5 sur 5">★★★★★</div><blockquote>“ I really recommend Mme Ladj. She meets deadlines and delivers professional, excellent work. Very satisfied. ”</blockquote><figcaption class="who"><span class="avatar" aria-hidden="true">D</span><span><span class="nm">Djazil Oukili</span><br><span class="mt">Avis Google</span></span></figcaption></figure>
+            </div>
+            <div style="text-align:center;margin-top:28px">
+                <a href="https://maps.app.goo.gl/HgMQM6MXMJzqZ7pa9" target="_blank" rel="noopener noreferrer" class="btn btn-ghost"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg><span data-i18n="testiAll">Voir tous les avis sur Google</span></a>
             </div>
         </div>
     </section>
@@ -649,6 +756,7 @@
                 </div>
             </div>
             <div class="reveal">
+                <div style="margin-bottom:18px"><a href="https://maps.app.goo.gl/HgMQM6MXMJzqZ7pa9" target="_blank" rel="noopener noreferrer" class="trust-badge" aria-label="Note Google 5 sur 5, 10 avis"><span class="stars" aria-hidden="true">★★★★★</span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg><span data-i18n="trustReviews">5,0 · 10 avis Google</span></a></div>
                 <form id="contactForm" novalidate>
                     <div class="field"><label class="lbl" for="f-name" data-i18n="formNameL">Identité complète / Raison sociale</label><input id="f-name" name="nom" type="text" required data-i18n-ph="formNamePh" placeholder="Saisissez votre nom ou l'intitulé de l'entreprise"></div>
                     <div class="field"><label class="lbl" for="f-email" data-i18n="formEmailL">Adresse électronique professionnelle</label><input id="f-email" name="email" type="email" data-i18n-ph="formEmailPh" placeholder="contact@institution.com"></div>
@@ -685,6 +793,7 @@
                 <a href="#documents" data-i18n="navDocuments">Documents</a>
                 <a href="#deontologie" data-i18n="navDeonto">Déontologie</a>
                 <a href="#faq" data-i18n="navFaq">FAQ</a>
+                <a href="#temoignages" data-i18n="navTestimonials">Avis</a>
                 <a href="#contact" data-i18n="navContact">Contact</a>
             </nav>
         </div>
@@ -758,6 +867,7 @@ const I18N = {
     contactDesc:"Pour toute demande d'analyse de dossier ou de tarification, veuillez solliciter le secrétariat du cabinet par téléphone, via le canal officiel WhatsApp ou par dépôt électronique ci-contre.",
     labelPhone:"Ligne Directe", labelEmail:"Secrétariat Électronique", labelAddress:"Siège du Cabinet", labelHours:"Horaires d'Ouverture", hoursVal:"Dim. – Mar. : 09h–16h · Mer. : 09h–15h · Jeu. et Ven. : fermé",
     ctaDirections:"Itinéraire", ctaReviews:"Voir les avis Google",
+    navTestimonials:"Avis", testiEyebrow:"Avis vérifiés sur Google", testiTitle:"La confiance de nos clients, en toutes lettres.", testiNote:"Avis réels et vérifiables sur Google", testiAll:"Voir tous les avis sur Google", trustReviews:"5,0 · 10 avis Google",
     formNameL:"Identité complète / Raison sociale", formNamePh:"Saisissez votre nom ou l'intitulé de l'entreprise", formEmailL:"Adresse électronique professionnelle", formEmailPh:"contact@institution.com", formPhoneL:"Ligne téléphonique de contact", formPhonePh:"+213 …", formMsgL:"Objet de la demande et spécifications", formMsgPh:"Nature des pièces, combinaisons linguistiques, impératifs de délais…",
     formNote:"Ce formulaire transmet vos données vers notre canal sécurisé WhatsApp pour traitement prioritaire.", formSubmit:"Transmettre le dossier", formOkMsg:"Initialisation de la liaison sécurisée WhatsApp…",
     footerRights:"© 2026 Cabinet de Traduction Officielle Maître Ladj.A — Tous droits réservés."
@@ -817,6 +927,7 @@ const I18N = {
     contactDesc:"For any document analysis or pricing request, please contact the office secretariat by phone, via the official WhatsApp channel, or through the electronic submission form opposite.",
     labelPhone:"Direct Line", labelEmail:"Electronic Secretariat", labelAddress:"Office Headquarters", labelHours:"Opening Hours", hoursVal:"Sun.–Tue.: 9 am–4 pm · Wed.: 9 am–3 pm · Thu. & Fri.: closed",
     ctaDirections:"Get directions", ctaReviews:"See Google reviews",
+    navTestimonials:"Reviews", testiEyebrow:"Verified Google reviews", testiTitle:"Our clients' trust, in their own words.", testiNote:"Real, verifiable reviews on Google", testiAll:"See all reviews on Google", trustReviews:"5.0 · 10 Google reviews",
     formNameL:"Full Name / Corporate Name", formNamePh:"Enter your name or company name", formEmailL:"Professional Email Address", formEmailPh:"contact@institution.com", formPhoneL:"Contact Phone Line", formPhonePh:"+213 …", formMsgL:"Subject of Request & Specifications", formMsgPh:"Nature of documents, language combinations, deadline constraints…",
     formNote:"This form transmits your data to our secured WhatsApp channel for priority handling.", formSubmit:"Submit the File", formOkMsg:"Initializing secured WhatsApp connection…",
     footerRights:"© 2026 Official Translation Office Maître Ladj.A — All rights reserved."
@@ -876,6 +987,7 @@ const I18N = {
     contactDesc:"لأي طلب يتعلق بتحليل ملف أو تسعير، يرجى التواصل مع أمانة المكتب هاتفياً، عبر قناة واتساب الرسمية، أو من خلال نموذج الإيداع الإلكتروني المقابل.",
     labelPhone:"الخط المباشر", labelEmail:"الأمانة الإلكترونية", labelAddress:"مقر المكتب", labelHours:"ساعات العمل", hoursVal:"الأحد – الثلاثاء: 09:00–16:00 · الأربعاء: 09:00–15:00 · الخميس والجمعة: مغلق",
     ctaDirections:"الاتجاهات", ctaReviews:"عرض تقييمات Google",
+    navTestimonials:"آراء", testiEyebrow:"تقييمات موثّقة على Google", testiTitle:"ثقة عملائنا، بكلماتهم.", testiNote:"آراء حقيقية وقابلة للتحقق على Google", testiAll:"عرض كل التقييمات على Google", trustReviews:"5.0 · 10 تقييمات على Google",
     formNameL:"الاسم الكامل / الإسم التجاري للشركة", formNamePh:"أدخل اسمكم أو اسم الشركة", formEmailL:"البريد الإلكتروني المهني", formEmailPh:"contact@institution.com", formPhoneL:"خط الهاتف للاتصال", formPhonePh:"+213 …", formMsgL:"موضوع الطلب والمواصفات", formMsgPh:"طبيعة الوثائق، التوليفات اللغوية، الإكراهات المتعلقة بالأجل…",
     formNote:"يقوم هذا النموذج بنقل بياناتكم إلى قناة واتساب الآمنة الخاصة بنا لمعالجتها بصفة أولوية.", formSubmit:"إرسال الملف", formOkMsg:"جاري تهيئة الاتصال الآمن عبر واتساب…",
     footerRights:"© 2026 مكتب الترجمة الرسمية الأستاذة العاج. أ — جميع الحقوق محفوظة."
@@ -885,6 +997,7 @@ const I18N = {
 (function(){
   "use strict";
   const htmlEl = document.documentElement;
+  htmlEl.classList.add('js');
   const saved = (function(){ try{return localStorage.getItem('lang')}catch(e){return null} })();
   let lang = (saved && I18N[saved]) ? saved : 'fr';
 
@@ -925,11 +1038,41 @@ const I18N = {
     mob.classList.remove('open'); burger.setAttribute('aria-expanded','false');
   }));
 
-  /* Reveal on scroll */
+  /* Reveal + stagger on scroll */
   const io=new IntersectionObserver((ents)=>{
     ents.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  document.querySelectorAll('.reveal, .stagger').forEach(el=>io.observe(el));
+
+  /* Animated counters (stats) */
+  const reduceMo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function countTo(el){
+    const to=parseInt(el.getAttribute('data-to'),10);
+    if(!isFinite(to)) return;
+    if(reduceMo){ el.textContent=to; return; }
+    el.textContent='0';
+    const dur=1300, t0=performance.now();
+    function tick(now){
+      const p=Math.min((now-t0)/dur,1), e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(to*e);
+      if(p<1) requestAnimationFrame(tick); else el.textContent=to;
+    }
+    requestAnimationFrame(tick);
+    setTimeout(()=>{ el.textContent=to; }, dur+500); // backstop if rAF is throttled
+  }
+  const statsGrid=document.querySelector('.stats .grid');
+  let counted=false;
+  function runCounters(){ if(counted||!statsGrid) return; counted=true; statsGrid.querySelectorAll('.cv').forEach(countTo); }
+  const cio=new IntersectionObserver((ents)=>{
+    ents.forEach(e=>{ if(e.isIntersecting){ runCounters(); cio.unobserve(e.target);} });
+  },{threshold:.4});
+  if(statsGrid) cio.observe(statsGrid);
+
+  /* Failsafe — never leave JS-gated content hidden (hidden tabs, crawlers, no-IO) */
+  setTimeout(()=>{
+    document.querySelectorAll('.reveal, .stagger').forEach(el=>el.classList.add('in'));
+    runCounters();
+  }, 2500);
 
   /* Back to top */
   const toTop=document.getElementById('toTop');
